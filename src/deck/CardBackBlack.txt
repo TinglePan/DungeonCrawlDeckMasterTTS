@@ -1,0 +1,17 @@
+;Settings
+UNIT=CM
+PAGE=21,29.7,PORTRAIT
+BORDER=RECTANGLE, #000000, .1
+MARGINS=.5,.5,1,1
+
+VISUAL=G, 10, 10
+;BackFont
+HTMLFONT=FontName,@»ªÎÄËÎÌå,32,,#000000,CENTER
+;BackMargins
+HTMLMARGINS=FontName,0,0,0,0,CENTER
+RECTANGLE=1-2,0%,0%,100%,100%,#000000
+IMAGE=1,"..\..\image\cardback\monster.png",10%,20%,80%,60%
+IMAGE=2,"..\..\image\cardback\trap.png",10%,20%,80%,60%
+ENDVISUAL
+Display=..\..\build\image\CardBackMonsterExtra.png, 1, 1
+Display=..\..\build\image\CardBackTrapExtra.png, 2, 2

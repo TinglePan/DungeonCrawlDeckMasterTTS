@@ -1,0 +1,29 @@
+LINKMULDIS=rank
+LINKMULTI=maxCount
+LINK=..\..\sheet\SkillCardData.xlsx
+;Settings
+UNIT=CM
+PAGE=21,29.7,PORTRAIT
+BORDER=RECTANGLE, #000000, .1
+MARGINS=.5,.5,1,1
+
+VISUAL=G, 10, 10
+;NameFont
+HTMLFONT=NameFont,华文宋体,16,,#000000,CENTER
+;Name
+HTMLTEXT="1-{(cardName)}",[cardName],0%,5%,100%,8%,#FFFFFF,0,,100,NameFont
+;AltFont
+HTMLFONT=AltFont,华文宋体,8,,#000000,CENTER
+;Alt
+HTMLTEXT="1-{(alt)}",[alt],0%,15%,100%,5%,#FFFFFF,0,,100,AltFont
+;RequirementFont
+HTMLFONT=RequirementFont,华文宋体,8,,#000000,CENTER
+;Requirement
+HTMLTEXT="1-{(requirement)}",[requirement],0%,55%,100%,5%,#FFFFFF,0,,100,RequirementFont
+;EffectFont
+HTMLFONT=EffectFont,华文宋体,8,,#000000
+;MainEffects
+HTMLTEXT="1-{(EFFECT)}",[EFFECT],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
+IMAGE=,"..\..\image\icon\skill_inverted.png",2%,4%,10%,8%
+ENDVISUAL
+Display = "..\..\build\image\SkillCards.png",,,10x7

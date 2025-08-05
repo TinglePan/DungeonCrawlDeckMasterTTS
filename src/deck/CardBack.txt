@@ -1,0 +1,24 @@
+;Settings
+UNIT=CM
+PAGE=21,29.7,PORTRAIT
+BORDER=RECTANGLE, #000000, .1
+MARGINS=.5,.5,1,1
+
+VISUAL=G, 10, 10
+;BackFont
+HTMLFONT=FontName,@»ªÎÄËÎÌå,32,,#000000,CENTER
+;BackMargins
+HTMLMARGINS=FontName,0,0,0,0,CENTER
+IMAGE=1,"..\..\image\cardback\monster_inverted.png",10%,20%,80%,60%
+IMAGE=2,"..\..\image\cardback\trap_inverted.png",10%,20%,80%,60%
+IMAGE=3,"..\..\image\cardback\incident_inverted.png",10%,20%,80%,60%
+IMAGE=4,"..\..\image\cardback\upgrade_inverted.png",10%,20%,80%,60%
+IMAGE=5,"..\..\image\cardback\artifact_inverted.png",10%,20%,80%,60%
+IMAGE=6,"..\..\image\cardback\challenge_inverted.png",10%,20%,80%,60%
+ENDVISUAL
+Display=..\..\build\image\CardBackMonster.png, 1, 1
+Display=..\..\build\image\CardBackTrap.png, 2, 2
+Display=..\..\build\image\CardBackIncident.png, 3, 3
+Display=..\..\build\image\CardBackUpgrade.png, 4, 4
+Display=..\..\build\image\CardBackArtifact.png, 5, 5
+Display=..\..\build\image\CardBackChallenge.png, 6, 6
