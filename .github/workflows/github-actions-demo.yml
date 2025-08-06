@@ -1,13 +1,18 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Build
+run-name: ${{ github.actor }} building project.
 on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-      - run: Get-ChildItem -Force
-      - run: .\export.bat
-      - run: git add build/
-      - run: git commit -m "Automated update. $(date +'%Y-%m-%d %H:%M:%S')." -m "[skip ci]"
-      - run: git push origin HEAD:${{ github.ref }} -o ci.skip
+      - name: Fetch
+        run: Get-ChildItem -Force
+      - name: Job
+        run: .\export.bat
+      - name: Commit
+        run: |
+          git add build/
+          $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+          git commit -m "Automated update. $date." -m "[skip ci]"
+          git push origin HEAD:${{ github.ref }} -o ci.skip
