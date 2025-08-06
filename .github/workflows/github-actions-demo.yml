@@ -7,9 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: Get-ChildItem -Force
-      - name: Run bat script
-        run: export.bat
-        shell: cmd
+      - run: .\export.bat
       - run: git add -A
       - run: git commit -m "Automated update. $(date +'%Y-%m-%d %H:%M:%S')." -m "[skip ci]"
       - run: git push origin HEAD:${{ github.ref }} -o ci.skip
