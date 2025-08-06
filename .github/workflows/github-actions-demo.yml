@@ -1,6 +1,13 @@
 name: Build
 run-name: ${{ github.actor }} building project.
-on: [push]
+on:
+  push:
+    paths:
+      - "sheet/**"
+      - "src/deck/**"
+      - "src/py/**"
+      - "export.bat"
+
 # permissions:
 #   contents: write
 jobs:

@@ -2,47 +2,47 @@
 
 deckDefs = {
     monsterDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/14459069802300092741/B7498A417ABE5384DAFCE2B90E856F132028727C/", "https://steamusercontent-a.akamaihd.net/ugc/11653414587913314396/40777834FA34CB09555D32701B3934A2A6B4C8CE/", false, 70},
-        {"https://steamusercontent-a.akamaihd.net/ugc/16644223862717493471/406309E391441B9F0995CA2DC0CA21E0685A7E36/", "https://steamusercontent-a.akamaihd.net/ugc/11653414587913314396/40777834FA34CB09555D32701B3934A2A6B4C8CE/", false, 70},
-        {"https://steamusercontent-a.akamaihd.net/ugc/14332829029867148631/2A36F833BBF2AA042339592B737AD28B59C49052/", "https://steamusercontent-a.akamaihd.net/ugc/11653414587913314396/40777834FA34CB09555D32701B3934A2A6B4C8CE/", false, 4}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png", false, 70},
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards2.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png", false, 70},
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards3.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png", false, 4}
     },
     trapDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/10745127176558810836/5464A5424A4CEF458437C30B631256FFC8DDAB1C/", "https://steamusercontent-a.akamaihd.net/ugc/9379947437688337518/D73B96196D1C756547D9B8AA502B34B01D92F9AD/", false, 33}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/TrapCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackTrap.png", false, 33}
     },
     eventDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/11639081495037386766/36AFA9E0A72A897558296B46F245CCA963734502/", "https://steamusercontent-a.akamaihd.net/ugc/18325967349855116988/18F4AB61AED5A28298789169D6D64B298F9200AA/", false, 27}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/EventCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackIncident.png", false, 27}
     },
     lootDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/18072365894635877470/35F313B66937BDDCB3E93AFA07635750E4C6D88D/", "https://steamusercontent-a.akamaihd.net/ugc/18325967349855116988/18F4AB61AED5A28298789169D6D64B298F9200AA/", false, 21}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/LootCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackIncident.png", false, 21}
     },
     itemDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/12972466863873361785/C78F60E57905A3B1C1B83BB734F5ACBB68D9413B/", "https://steamusercontent-a.akamaihd.net/ugc/16607091792918689115/17140B6D11DF055ED871D07983AAA8561990FB0E/", false, 32}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ItemCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png", false, 32}
     },
     trinketDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/10196039349926994164/208B6E4972C5ADA6C38DEDBCF2FD73E88816AA6F/", "https://steamusercontent-a.akamaihd.net/ugc/16607091792918689115/17140B6D11DF055ED871D07983AAA8561990FB0E/", false, 10}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/TrinketCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png", false, 10}
     },
     gearDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/13353898434684454430/AC318C3D99202A12306FB61981418E02342BA507/", "https://steamusercontent-a.akamaihd.net/ugc/16607091792918689115/17140B6D11DF055ED871D07983AAA8561990FB0E/", false, 23}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/GearCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png", false, 23}
     },
     skillDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/17409262499417051764/D37AA74CED917F9E8D060CAA814D1E2F77ED02EA/", "https://steamusercontent-a.akamaihd.net/ugc/14534574897291656494/CDD842F9676E447DA138D2CDAC469F34700133F5/", false, 15}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/SkillCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackUpgrade.png", false, 15}
     },
     attributeDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/10875748215875384909/5C13ED928EB88F968BBD9175B8DF187A6900F306/", "https://steamusercontent-a.akamaihd.net/ugc/14534574897291656494/CDD842F9676E447DA138D2CDAC469F34700133F5/", false, 25}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/AttributeCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackUpgrade.png", false, 25}
     },
     challengeDeck = {
-        {"https://steamusercontent-a.akamaihd.net/ugc/11576505604177655794/56E87268AC79DFFABEB768C6662A668CF0A76641/", "https://steamusercontent-a.akamaihd.net/ugc/13727740811657741861/148A04AB60D2EEC64CCB733A3DF9F66EACAB44B4/", false, 10}
+        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ChallengeCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackChallenge.png", false, 10}
     }
 }
 
 tagFiles = {
     monster = {
-        "https://steamusercontent-a.akamaihd.net/ugc/13630992838881938423/68D77ADBB6973F70C898A8D0DF0A797DD278614B/",
-        "https://steamusercontent-a.akamaihd.net/ugc/15834467711999984706/3B43CCD5DF5D0998D7AAC7A107B4A9749D377EAA/",
-        "https://steamusercontent-a.akamaihd.net/ugc/11086190053584140498/9B2E21735B62368650FFD0F7663E68534F542E22/"
+        "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_0.json",
+        "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_1.json",
+        "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_2.json"
     },
     trap = {
-        "https://steamusercontent-a.akamaihd.net/ugc/16071704237714046656/3694CC5F46737BFF7C17BBB34E4337956F5FFCBC/"
+        "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/trap_tags_0.json"
     }
 }
 
