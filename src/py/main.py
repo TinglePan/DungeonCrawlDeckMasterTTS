@@ -4,8 +4,8 @@ import re
 
 
 entry = [
-    {"file_path": "datasheet/MonsterCardData.xlsx", "export_name": "monster_tags", "innate_tags": ["Monster", "怪物"]},
-    {"file_path": "datasheet/TrapCardData.xlsx", "export_name": "trap_tags", "innate_tags": ["Trap", "陷阱"]},
+    {"file_path": "sheet/MonsterCardData.xlsx", "export_name": "monster_tags", "innate_tags": ["Monster", "怪物"]},
+    {"file_path": "sheet/TrapCardData.xlsx", "export_name": "trap_tags", "innate_tags": ["Trap", "陷阱"]},
 ]
 
 
@@ -35,7 +35,7 @@ def export_sheet(file_path, export_name, innate_tags=None):
             result.append(tags)
     n_files = (len(result) - 1) // 70 + 1
     for i in range(n_files):
-        export_path = f'json/{export_name}_{i}.json'
+        export_path = f'build/json/{export_name}_{i}.json'
         data = result[i * 70: (i + 1) * 70 if (i + 1) * 70 < len(result) else len(result)]
         # 导出JSON文件
         with open(export_path, 'w', encoding='utf-8') as f:
