@@ -11,4 +11,4 @@ start /MIN nanDECK src\deck\LootDeckFile.txt /createpng output=build\image
 start /MIN nanDECK src\deck\MonsterDeckFile.txt /createpng output=build\image
 start /MIN nanDECK src\deck\SkillDeckFile.txt /createpng output=build\image
 start /MIN nanDECK src\deck\TrapDeckFile.txt /createpng output=build\image
-venv\Scripts\python.exe src\py\main.py
+py\venv\Scripts\python.exe src\py\main.py
