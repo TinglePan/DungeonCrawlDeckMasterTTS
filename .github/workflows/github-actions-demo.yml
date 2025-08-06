@@ -1,6 +1,8 @@
 name: Build
 run-name: ${{ github.actor }} building project.
 on: [push]
+# permissions:
+#   contents: write
 jobs:
   Explore-GitHub-Actions:
     runs-on: self-hosted
