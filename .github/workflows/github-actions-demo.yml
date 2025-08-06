@@ -6,7 +6,9 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-      - run: export.bat
+      - name: Run bat script
+        run: ./export.bat
+        shell: cmd
       - run: git add -A
       - run: git commit -m "Automated update. $(date +'%Y-%m-%d %H:%M:%S')." -m "[skip ci]"
       - run: git push origin HEAD:${{ github.ref }} -o ci.skip
