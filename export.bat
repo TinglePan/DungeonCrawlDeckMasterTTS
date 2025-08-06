@@ -1,14 +1,14 @@
-D:\bin\nandeck\nanDECK.exe deck\TrinketDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\AttributeDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\CardBack.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\CardBackBlack.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\ChallengeDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\ItemDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\EventDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\ExtraDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\ExtraDeckCardBack.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\LootDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\MonsterDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\SkillDeckFile.txt /createpng output=image\build
-D:\bin\nandeck\nanDECK.exe deck\TrapDeckFile.txt /createpng output=image\build
-venv\Scripts\python.exe main.py
+start /MIN nanDECK src\deck\TrinketDeckFile.txt /createpng /NOPDFDIAG output=build\image
+start /MIN nanDECK src\deck\AttributeDeckFile.txt /createpng /NOPDFDIA Goutput=build\image
+start /MIN nanDECK src\deck\CardBack.txt /createpng /NOPDFDIA Goutput=build\image
+start /MIN nanDECK src\deck\CardBackBlack.txt /createpng /NOPDFDIAG output=build\image
+start /MIN nanDECK src\deck\ChallengeDeckFile.txt /createpng /NOPDFDIAG output=build\image
+start /MIN nanDECK src\deck\ItemDeckFile.txt /createpng output=build\image
+start /MIN nanDECK src\deck\EventDeckFile.txt /createpng output=build\image
+start /MIN nanDECK src\deck\ExtraDeckFile.txt /createpng output=build\image
+start /MIN nanDECK src\deck\ExtraDeckCardBack.txt /createpng output=build\image
+start /MIN nanDECK src\deck\LootDeckFile.txt /createpng output=build\image
+start /MIN nanDECK src\deck\MonsterDeckFile.txt /createpng output=build\image
+start /MIN nanDECK src\deck\SkillDeckFile.txt /createpng output=build\image
+start /MIN nanDECK src\deck\TrapDeckFile.txt /createpng output=build\image
+venv\Scripts\python.exe src\py\main.py

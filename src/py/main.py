@@ -3,8 +3,8 @@ import json
 
 
 entry = [
-    {"file_path": "datasheet/MonsterCardData.xlsx", "export_name": "monster_tags.json", "innate_tags": ["Monster", "怪物"]},
-    {"file_path": "datasheet/TrapCardData.xlsx", "export_name": "trap_tags.json", "innate_tags": ["Trap", "陷阱"]},
+    {"file_path": "sheet/MonsterCardData.xlsx", "export_name": "monster_tags.json", "innate_tags": ["Monster", "怪物"]},
+    {"file_path": "sheet/TrapCardData.xlsx", "export_name": "trap_tags.json", "innate_tags": ["Trap", "陷阱"]},
 ]
 
 
@@ -33,7 +33,7 @@ def export_sheet(file_path, export_name, innate_tags=None):
         for i in range(max_count):
             result.append(tags)
 
-    export_path = 'json/' + export_name
+    export_path = 'build/json/' + export_name
     # 导出JSON文件
     with open(export_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
