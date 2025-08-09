@@ -1,0 +1,10 @@
+{
+  "monster": [
+    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags.json?dummy=1754608427",
+    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_1.json?dummy=1754608427",
+    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_2.json?dummy=1754608427"
+  ],
+  "trap": [
+    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/trap_tags.json?dummy=1754608427"
+  ]
+}

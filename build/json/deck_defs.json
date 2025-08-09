@@ -1,0 +1,102 @@
+{
+  "attribute": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Upgrade.png?dummy=1754608427",
+      false,
+      25
+    ]
+  ],
+  "challenge": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Challenge.png?dummy=1754608427",
+      false,
+      10
+    ]
+  ],
+  "event": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Incident.png?dummy=1754608427",
+      false,
+      27
+    ]
+  ],
+  "extra": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Extra.png?dummy=1754608427",
+      true,
+      43
+    ]
+  ],
+  "gear": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Artifact.png?dummy=1754608427",
+      false,
+      23
+    ]
+  ],
+  "item": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Artifact.png?dummy=1754608427",
+      false,
+      32
+    ]
+  ],
+  "loot": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Incident.png?dummy=1754608427",
+      false,
+      21
+    ]
+  ],
+  "monster": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Monster.png?dummy=1754608427",
+      false,
+      70
+    ],
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Monster.png?dummy=1754608427",
+      false,
+      70
+    ],
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Monster.png?dummy=1754608427",
+      false,
+      4
+    ]
+  ],
+  "skill": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Upgrade.png?dummy=1754608427",
+      false,
+      15
+    ]
+  ],
+  "trap": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Trap.png?dummy=1754608427",
+      false,
+      36
+    ]
+  ],
+  "trinket": [
+    [
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/None?dummy=1754608427",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/Artifact.png?dummy=1754608427",
+      false,
+      10
+    ]
+  ]
+}
