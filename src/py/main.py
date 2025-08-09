@@ -1,15 +1,88 @@
+import os.path
+
 import pandas as pd
 import json
 import re
 
 
-entry = [
-    {"file_path": "sheet/MonsterCardData.xlsx", "export_name": "monster_tags", "innate_tags": ["Monster", "怪物"]},
-    {"file_path": "sheet/TrapCardData.xlsx", "export_name": "trap_tags", "innate_tags": ["Trap", "陷阱"]},
+tag_entries = [
+    {"file_path": "sheet/MonsterCardData.xlsx", "innate_tags": ["Monster", "怪物"]},
+    {"file_path": "sheet/TrapCardData.xlsx", "innate_tags": ["Trap", "陷阱"]},
 ]
 
 
-def export_sheet(file_path, export_name, innate_tags=None):
+def entry_name_from_sheet_name(sheet_name):
+    basename = os.path.splitext(os.path.basename(sheet_name))[0]
+    match = re.fullmatch(r"(.+?)CardData", basename)
+    if match:
+        prefix = match.group(1)
+        return prefix[0].lower() + prefix[1:]
+    raise f"Unexpected sheet name {sheet_name}"
+
+
+def entry_name_to_card_file_name(entry_name, index = 0):
+    res = entry_name[0].upper() + entry_name[1:] + "Cards"
+    if index > 1:
+        res += str(index)
+    res += ".png"
+    return res
+
+
+def entry_name_to_card_back_file_name(entry_name):
+    entry_name_2_back_name_map = {
+        "monster": "monster",
+        "trap": "trap",
+        "event": "incident",
+        "loot": "incident",
+        "item": "artifact",
+        "trinket": "artifact",
+        "gear": "artifact",
+        "skill": "upgrade",
+        "attribute": "upgrade",
+        "challenge": "challenge",
+        "extra": "extra"
+    }
+    if entry_name not in entry_name_2_back_name_map:
+        raise f"Unexpected entry name {entry_name}"
+    card_back_name = entry_name_2_back_name_map[entry_name]
+    return "CardBack" + card_back_name[0].upper() + card_back_name[1:] + ".png"
+
+
+def relative_path2github_url(relative_path):
+    import time
+    return f"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/{relative_path}?dummy={int(time.time())}"
+
+
+def process_sheets(sheet_dir_path):
+    # 遍历dir_path目录下的所有文件
+    sheet_source = {}
+    for root, _, files in os.walk(sheet_dir_path):
+        for file in files:
+            if file.endswith('.xlsx') and not file.startswith('~'):
+                file_path = os.path.join(root, file)
+                df = pd.read_excel(file_path)
+                entry_count = 0
+                if 'maxCount' in df.columns:
+                    for _, row in df.iterrows():
+                        entry_count += row['maxCount']
+                else:
+                    entry_count = len(df)
+                entry_name = entry_name_from_sheet_name(file)
+                sheet_source[entry_name] = []
+                n_files = entry_count // 70 + 1
+                for i in range(n_files):
+                    sheet_source[entry_name].append([
+                        relative_path2github_url(f"build/image/{entry_name_to_card_file_name(entry_name, i)}"),
+                        relative_path2github_url(f"build/image/{entry_name_to_card_back_file_name(entry_name)}"),
+                        False if entry_name != "extra" else True,
+                        min(70, entry_count - i * 70)
+                    ])
+    export_path = f'build/json/deck_defs.json'
+    with open(export_path, 'w', encoding='utf-8') as f:
+        json.dump(sheet_source, f, ensure_ascii=False, indent=2)
+
+
+def extract_tags(file_path, innate_tags=None):
     # 读取Excel文件
     df = pd.read_excel(file_path)  # 替换为你的Excel文件名
 
@@ -34,14 +107,30 @@ def export_sheet(file_path, export_name, innate_tags=None):
         for i in range(max_count):
             result.append(tags)
     n_files = (len(result) - 1) // 70 + 1
+
+    urls = []
+    entry_name = entry_name_from_sheet_name(file_path)
     for i in range(n_files):
-        export_path = f'build/json/{export_name}_{i}.json'
+        export_path = f'build/json/{entry_name}_tags.json' if i == 0 else f"build/json/{entry_name}_tags_{i}.json"
         data = result[i * 70: (i + 1) * 70 if (i + 1) * 70 < len(result) else len(result)]
         # 导出JSON文件
         with open(export_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
+        urls.append(relative_path2github_url(export_path))
+    return entry_name, urls
+
+
+def process_tags():
+    tag_source = {}
+    for entry in tag_entries:
+        entry_name, urls = extract_tags(entry['file_path'], entry.get('innate_tags'))
+
+        tag_source[entry_name] = urls
+    export_path = f'build/json/tag_files.json'
+    with open(export_path, 'w', encoding='utf-8') as f:
+        json.dump(tag_source, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == '__main__':
-    for item in entry:
-        export_sheet(item['file_path'], item['export_name'], item.get('innate_tags'))
+    process_tags()
+    process_sheets("sheet/")
