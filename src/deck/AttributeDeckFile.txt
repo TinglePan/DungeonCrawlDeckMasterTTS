@@ -16,3 +16,5 @@ HTMLFONT=TagFont,╩╙ндкнлЕ,8,,#000000,CENTER
 IMAGE=,"..\..\image\icon\attribute_inverted.png",2%,4%,10%,8%
 ENDVISUAL
 Display = "..\..\build\image\AttributeCards.png",,,10x7
+
+Print = 0

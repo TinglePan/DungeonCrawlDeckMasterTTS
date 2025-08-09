@@ -19,3 +19,5 @@ HTMLTEXT="1-{(EFFECT)}",[EFFECT],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
 IMAGE=,"..\..\image\icon\trinket_inverted.png",2%,4%,10%,8%
 ENDVISUAL
 Display = "..\..\build\image\TrinketCards.png",,,10x7
+
+Print = 0

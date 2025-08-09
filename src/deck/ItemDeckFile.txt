@@ -25,3 +25,5 @@ HTMLTEXT="1-{(CHARGE)}",[CHARGE],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
 IMAGE=,"..\..\image\icon\item_inverted.png",2%,4%,10%,8%
 ENDVISUAL
 Display = "..\..\build\image\ItemCards.png",,,10x7
+
+Print = 0

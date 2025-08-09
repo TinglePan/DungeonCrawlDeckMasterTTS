@@ -28,3 +28,5 @@ ENDVISUAL
 DISPLAY = "..\..\build\image\MonsterCards.png", 1, 70
 DISPLAY = "..\..\build\image\MonsterCards2.png", 71, 140
 DISPLAY = "..\..\build\image\MonsterCards3.png", 141, 210
+
+Print = 0

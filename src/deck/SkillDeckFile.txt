@@ -27,3 +27,5 @@ HTMLTEXT="1-{(EFFECT)}",[EFFECT],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
 IMAGE=,"..\..\image\icon\skill_inverted.png",2%,4%,10%,8%
 ENDVISUAL
 Display = "..\..\build\image\SkillCards.png",,,10x7
+
+Print = 0

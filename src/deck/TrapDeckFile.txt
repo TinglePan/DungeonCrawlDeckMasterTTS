@@ -25,3 +25,5 @@ IMAGE=,"..\..\image\icon\item_inverted.png",2%,4%,10%,8%
 ENDVISUAL
 DISPLAY = "..\..\build\image\TrapCards.png", 1, 70
 DISPLAY = "..\..\build\image\TrapCards2.png", 71, 140
+
+Print = 0

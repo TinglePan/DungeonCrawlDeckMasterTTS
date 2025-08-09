@@ -22,3 +22,5 @@ Display=..\..\build\image\CardBackIncident.png, 3, 3
 Display=..\..\build\image\CardBackUpgrade.png, 4, 4
 Display=..\..\build\image\CardBackArtifact.png, 5, 5
 Display=..\..\build\image\CardBackChallenge.png, 6, 6
+
+Print = 0

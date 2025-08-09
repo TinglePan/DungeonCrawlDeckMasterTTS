@@ -15,3 +15,5 @@ IMAGE=2,"..\..\image\cardback\trap.png",10%,20%,80%,60%
 ENDVISUAL
 Display=..\..\build\image\CardBackMonsterExtra.png, 1, 1
 Display=..\..\build\image\CardBackTrapExtra.png, 2, 2
+
+Print = 0
