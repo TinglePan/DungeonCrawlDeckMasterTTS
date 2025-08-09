@@ -1,51 +1,10 @@
 --[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]
 
-deckDefs = {
-    monsterDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png", false, 70},
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards2.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png", false, 70},
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards3.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png", false, 4}
-    },
-    trapDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/TrapCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackTrap.png", false, 33}
-    },
-    eventDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/EventCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackIncident.png", false, 27}
-    },
-    lootDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/LootCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackIncident.png", false, 21}
-    },
-    itemDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ItemCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png", false, 32}
-    },
-    trinketDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/TrinketCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png", false, 10}
-    },
-    gearDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/GearCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png", false, 23}
-    },
-    skillDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/SkillCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackUpgrade.png", false, 15}
-    },
-    attributeDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/AttributeCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackUpgrade.png", false, 25}
-    },
-    challengeDeck = {
-        {"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ChallengeCards.png", "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackChallenge.png", false, 10}
-    }
-}
+deckDefSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/deck_defs.json?dummy=" .. os.time()
+tagFileSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/tag_files.json?dummy=" .. os.time()
 
-tagFiles = {
-    monster = {
-        "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_0.json",
-        "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_1.json",
-        "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_2.json"
-    },
-    trap = {
-        "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/trap_tags_0.json"
-    }
-}
-
+deckDefs = {}
+tagFiles = {}
 decks = {}
 mainDeckMonsterCount = 40
 mainDeckTrapCount = 10
@@ -58,18 +17,33 @@ startColIndex = -3
 startRowIndex = -4
 
 
+function loadSourceFiles()
+end
+
+
 --[[ The onLoad event is called after the game save finishes loading. --]]
 function onLoad()
     print("on load")
-    for tagType, tagFileList in pairs(tagFiles) do
-        for i, tagFile in ipairs(tagFileList) do
-            WebRequest.get(tagFile, function(request)
-                if not request.is_error then
-                    tags[tagType][i] = JSON.decode(request.text)
-                end
-            end)
+    WebRequest.get(deckDefSource, function(request)
+        if not request.is_error then
+            deckDefs = JSON.decode(request.text)
         end
-    end
+    end)
+    WebRequest.get(tagFileSource, function(request)
+        if not request.is_error then
+            tagFiles = JSON.decode(request.text)
+            for tagType, tagFileList in pairs(tagFiles) do
+                for i, tagFile in ipairs(tagFileList) do
+                    WebRequest.get(tagFile, function(request)
+                        if not request.is_error then
+                            tags[tagType][i] = JSON.decode(request.text)
+                        end
+                    end)
+                end
+            end
+        end
+    end)
+    
     cardDealer = getObjectFromGUID("b9c3d5")
     print("cardDealer ", cardDealer)
 end
@@ -87,7 +61,7 @@ function spawnDeck(rowIdx, colIdx, faceUrl, backUrl, isUniqueBack, nCards)
         scale = {1, 1, 1},
         sound = false
     })
-    object.setCustomObject({uniqueBack = isUniqueBack, number = nCards, face = faceUrl, back = backUrl})
+    object.setCustomObject({unique_back = isUniqueBack, number = nCards, face = faceUrl, back = backUrl})
     return object
 end
 
@@ -121,19 +95,19 @@ end
 
 function tagDecks()
     local coroutines = {}
-    for i, deck in ipairs(decks.monsterDeck) do
+    for i, deck in ipairs(decks.monster) do
         local targetPos = deck.getPosition()
         targetPos.z = targetPos.z + 3.5
         local co = coroutine.create(tagDeck)
-        coroutine.resume(co, decks.monsterDeck[i], targetPos, tags.monster[i])
-        Wait.time(function() _, decks.monsterDeck[i] = coroutine.resume(co) end, 0.5)
+        coroutine.resume(co, decks.monster[i], targetPos, tags.monster[i])
+        Wait.time(function() _, decks.monster[i] = coroutine.resume(co) end, 0.5)
     end
-    for i, deck in ipairs(decks.trapDeck) do
+    for i, deck in ipairs(decks.trap) do
         local targetPos = deck.getPosition()
         targetPos.z = targetPos.z + 3.5
         local co = coroutine.create(tagDeck)
-        coroutine.resume(co, decks.trapDeck[i], targetPos, tags.trap[i])
-        Wait.time(function() _, decks.trapDeck[i] = coroutine.resume(co) end, 0.5)
+        coroutine.resume(co, decks.trap[i], targetPos, tags.trap[i])
+        Wait.time(function() _, decks.trap[i] = coroutine.resume(co) end, 0.5)
     end
 end
 
@@ -159,12 +133,12 @@ function mergeAllDecks()
         decks[name] = mergeDecks(subDecks)
     end
     -- decks.main = mergeDeck({decks.monster, decks.trap})
-    decks.incidentDeck = mergeDecks({decks.eventDeck, decks.lootDeck})
-    decks.incidentDeck.shuffle()
-    decks.artifactDeck = mergeDecks({decks.itemDeck, decks.gearDeck, decks.trinketDeck})
-    decks.artifactDeck.shuffle()
-    decks.upgradeDeck = mergeDecks({decks.attributeDeck, decks.skillDeck})
-    decks.upgradeDeck.shuffle()
+    decks.incident = mergeDecks({decks.event, decks.loot})
+    decks.incident.shuffle()
+    decks.artifact = mergeDecks({decks.item, decks.gear, decks.trinket})
+    decks.artifact.shuffle()
+    decks.upgrade = mergeDecks({decks.attribute, decks.skill})
+    decks.upgrade.shuffle()
 end
 
 function checkTagsEqual(tagsA, tagsB)
@@ -205,20 +179,20 @@ function takeCopiesUntil(sourceDeck, targetDeck, untilCount)
 end
 
 function buildMainDeckCoroutine()
-    local targetPos = decks.monsterDeck.getPosition()
+    local targetPos = decks.monster.getPosition()
     targetPos.z = targetPos.z - 3.5
-    local card = decks.monsterDeck.takeObject({
+    local card = decks.monster.takeObject({
         position = targetPos
     })
     local targetDeck = card
     coroutine.yield()
-    targetDeck = takeAllCopies(decks.monsterDeck, card.getTags(), targetDeck, 40)
-    targetDeck = takeCopiesUntil(decks.monsterDeck, targetDeck, 40)
-    targetDeck = takeCopiesUntil(decks.trapDeck, targetDeck, 50)
-    decks.mainDeck = targetDeck
-    decks.mainDeck.shuffle()
+    targetDeck = takeAllCopies(decks.monster, card.getTags(), targetDeck, 40)
+    targetDeck = takeCopiesUntil(decks.monster, targetDeck, 40)
+    targetDeck = takeCopiesUntil(decks.trap, targetDeck, 50)
+    decks.main = targetDeck
+    decks.main.shuffle()
     print("cardDealer ",cardDealer)
-    cardDealer.setVar("deck", decks.mainDeck)
+    cardDealer.setVar("deck", decks.main)
     print(cardDealer.getVar("deck"))
 end
 
@@ -227,7 +201,7 @@ function buildMainDeck()
     coroutine.resume(co)
     Wait.time(function()
         coroutine.resume(co)
-        mergeDecks({decks.monsterDeck, decks.trapDeck})
-        decks.monsterDeck.shuffle()
+        mergeDecks({decks.monster, decks.trap})
+        decks.monster.shuffle()
     end, 1)
 end
