@@ -21,7 +21,7 @@ HTMLTEXT="1-{(effect)}",[effect],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
 HTMLFONT=NumberFont,»ªÎÄËÎÌå,20,,#000000,CENTER
 ;Rank(size)
 HTMLTEXT="1-{(RANK)}",[RANK],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
-IMAGE=,"..\..\image\icon\item_inverted.png",2%,4%,10%,8%
+IMAGE=,"..\..\image\icon\trap_inverted.png",2%,4%,10%,8%
 ENDVISUAL
 DISPLAY = "..\..\build\image\TrapCards.png", 1, 70
 DISPLAY = "..\..\build\image\TrapCards2.png", 71, 140
