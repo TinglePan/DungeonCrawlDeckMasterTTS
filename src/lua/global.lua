@@ -1,11 +1,13 @@
 --[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]
 
 deckDefSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/deck_defs.json?dummy=" .. os.time()
+structureDeckSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/structure_decks.json?dummy=" .. os.time()
 tagFileSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/tag_files.json?dummy=" .. os.time()
 
 deckDefs = {}
 tagFiles = {}
 decks = {}
+structureDeckDefs = {}
 mainDeckMonsterCount = 40
 mainDeckTrapCount = 10
 cardDealer = nil
@@ -15,15 +17,11 @@ tags = {
 }
 startColIndex = -3
 startRowIndex = -4
-
-
-function loadSourceFiles()
-end
+currentStructureDeck = {"slime", "robot"}
 
 
 --[[ The onLoad event is called after the game save finishes loading. --]]
 function onLoad()
-    print("on load")
     WebRequest.get(deckDefSource, function(request)
         if not request.is_error then
             deckDefs = JSON.decode(request.text)
@@ -43,9 +41,12 @@ function onLoad()
             end
         end
     end)
-    
+    WebRequest.get(structureDeckSource, function(request)
+        if not request.is_error then
+            structureDeckDefs = JSON.decode(request.txt)
+        end
+    end)
     cardDealer = getObjectFromGUID("b9c3d5")
-    print("cardDealer ", cardDealer)
 end
 
 --[[ The onUpdate event is called once per frame. --]]
@@ -150,15 +151,34 @@ function checkTagsEqual(tagsA, tagsB)
     return true
 end
 
-function takeAllCopies(sourceDeck, sourceTags, targetDeck, untilCount)
+function getCopiesWithTag(deck, tag)
+    local deckObjects = deck.getObjects()
+    local matchedCards = {}
+    
+    -- 遍历牌组中的每张卡牌
+    for i, cardInfo in ipairs(deckObjects) do
+        local cardTags = cardInfo.tags -- 获取当前卡牌的Tag列表
+        for _, tag in ipairs(cardTags) do
+            if tag == targetTag then
+                table.insert(matchedCards, cardInfo.guid) -- 记录匹配卡牌的GUID
+                break
+            end
+        end
+    end
+    return matchedCards
+end
+
+function takeAllCopies(sourceDeck, cardName, targetDeck, untilCount)
     local cards = sourceDeck.getObjects()
     local targetCardGuids = {}
     for i, card in ipairs(cards) do
-        if checkTagsEqual(sourceTags, card.tags) then
-            table.insert(targetCardGuids, card.guid)
+        for _, tag in ipair(card.tags)
+            if cardName == tag then
+                table.insert(targetCardGuids, card.guid)
+                break
+            end
         end
     end
-    print(" target card Guid count ", #targetCardGuids)
     for _, cardGuid in ipairs(targetCardGuids) do
         local card = sourceDeck.takeObject({guid = cardGuid})
         targetDeck = targetDeck.putObject(card)
@@ -166,7 +186,6 @@ function takeAllCopies(sourceDeck, sourceTags, targetDeck, untilCount)
             break
         end
     end
-    print("all copies taken")
     return targetDeck
 end
 
@@ -178,7 +197,7 @@ function takeCopiesUntil(sourceDeck, targetDeck, untilCount)
     return targetDeck
 end
 
-function buildMainDeckCoroutine()
+function buildRandMainDeckCoroutine()
     local targetPos = decks.monster.getPosition()
     targetPos.z = targetPos.z - 3.5
     local card = decks.monster.takeObject({
@@ -191,13 +210,41 @@ function buildMainDeckCoroutine()
     targetDeck = takeCopiesUntil(decks.trap, targetDeck, 50)
     decks.main = targetDeck
     decks.main.shuffle()
-    print("cardDealer ",cardDealer)
     cardDealer.setVar("deck", decks.main)
-    print(cardDealer.getVar("deck"))
+end
+
+function buildStructureDeckCoroutine()
+    local targetPos = decks.monster.getPosition()
+    targetPos.z = targetPos.z - 3.5
+    local targetDeck = nil
+    for _, deckName in ipairs(currentStructureDeck)
+        structureDeckDef = structureDeckDefs[deckName]
+        for cardName, count in pairs(structureDeckDef) do
+            local cardGuidList = getAllCardsWithTag(decks.monster, cardName)
+            for i = 1, count do
+                if targetDeck == nil then
+                    local card = decks.monster.takeObject({
+                        guid = cardGuidList[i]
+                        position = targetPos
+                    })
+                    targetDeck = card
+                    coroutine.yield()
+                else
+                    local card = deck.monster.takeObject(
+                        guid = cardGuidList[i]
+                    )
+                    targetDeck = targetDeck.putObject(card)
+                end
+            end
+        end
+    end
+    decks.main = targetDeck
+    decks.main.shuffle()
+    cardDealer.setVar("deck", decks.main)
 end
 
 function buildMainDeck()
-    local co = coroutine.create(buildMainDeckCoroutine)
+    local co = coroutine.create(buildStructureDeckCoroutine)
     coroutine.resume(co)
     Wait.time(function()
         coroutine.resume(co)
