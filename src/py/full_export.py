@@ -3,6 +3,7 @@ import os.path
 import pandas as pd
 import json
 import re
+import export_deck_image_of_changed_decks
 
 
 tag_entries = [
@@ -129,6 +130,15 @@ def process_tags():
     export_path = f'build/json/tag_files.json'
     with open(export_path, 'w', encoding='utf-8') as f:
         json.dump(tag_source, f, ensure_ascii=False, indent=2)
+
+
+def main():
+    need_update = export_deck_image_of_changed_decks.main()
+    if need_update:
+        process_tags()
+        process_sheets("sheet/")
+    else:
+        print("No changes detected, skipping tag and sheet processing.")
 
 
 if __name__ == '__main__':

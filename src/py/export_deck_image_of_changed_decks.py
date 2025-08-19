@@ -106,6 +106,7 @@ def main():
         with open(build_record_filename, 'w') as f:
             json.dump(build_record, f, indent=2)
         print("Updated build record.")
+    return need_update_build_record
 
 
 if __name__ == "__main__":

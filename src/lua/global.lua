@@ -172,7 +172,7 @@ function takeAllCopies(sourceDeck, cardName, targetDeck, untilCount)
     local cards = sourceDeck.getObjects()
     local targetCardGuids = {}
     for i, card in ipairs(cards) do
-        for _, tag in ipair(card.tags)
+        for _, tag in ipair(card.tags) do
             if cardName == tag then
                 table.insert(targetCardGuids, card.guid)
                 break
@@ -217,22 +217,22 @@ function buildStructureDeckCoroutine()
     local targetPos = decks.monster.getPosition()
     targetPos.z = targetPos.z - 3.5
     local targetDeck = nil
-    for _, deckName in ipairs(currentStructureDeck)
+    for _, deckName in ipairs(currentStructureDeck) do
         structureDeckDef = structureDeckDefs[deckName]
         for cardName, count in pairs(structureDeckDef) do
             local cardGuidList = getAllCardsWithTag(decks.monster, cardName)
             for i = 1, count do
                 if targetDeck == nil then
                     local card = decks.monster.takeObject({
-                        guid = cardGuidList[i]
+                        guid = cardGuidList[i],
                         position = targetPos
                     })
                     targetDeck = card
                     coroutine.yield()
                 else
-                    local card = deck.monster.takeObject(
+                    local card = deck.monster.takeObject({
                         guid = cardGuidList[i]
-                    )
+                    })
                     targetDeck = targetDeck.putObject(card)
                 end
             end
