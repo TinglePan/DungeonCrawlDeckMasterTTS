@@ -83,6 +83,21 @@ def process_sheets(sheet_dir_path):
         json.dump(sheet_source, f, ensure_ascii=False, indent=2)
 
 
+def get_field_as_str(field_value):
+    if field_value is None or pd.isna(field_value):
+        return ""
+    return field_value
+
+
+def get_field_as_int(field_value):
+    if field_value is None or pd.isna(field_value):
+        return 0
+    try:
+        return int(field_value)
+    except ValueError:
+        return 0
+
+
 def extract_tags(file_path, innate_tags=None):
     # 读取Excel文件
     df = pd.read_excel(file_path)  # 替换为你的Excel文件名
@@ -91,16 +106,16 @@ def extract_tags(file_path, innate_tags=None):
     result = []
     for _, row in df.iterrows():
         tags = innate_tags.copy() if innate_tags else []
-        card_name = row['cardName'].strip()
-        card_name_en = row['cardNameEn'].strip()
-        max_count = row['maxCount']
+        card_name = get_field_as_str(row['cardName']).strip()
+        card_name_en = get_field_as_str(row['cardNameEn']).strip()
+        max_count = get_field_as_int(row['maxCount'])
         tags += [card_name, card_name_en]
         if 'tags' in row:
-            raw_tags = re.split('[,，]', str(row['tags'])) if pd.notna(row['tags']) else []
+            raw_tags = re.split('[,，]', get_field_as_str(row['tags'])) if pd.notna(row['tags']) else []
             cleaned_tags = [tag.strip() for tag in raw_tags if tag.strip()]
             tags += cleaned_tags
         if 'tagsEn' in row:
-            raw_tags_en = re.split('[,，]', str(row['tagsEn'])) if pd.notna(row['tagsEn']) else []
+            raw_tags_en = re.split('[,，]', get_field_as_str(row['tagsEn'])) if pd.notna(row['tagsEn']) else []
             cleaned_tags_en = [tag.strip() for tag in raw_tags_en if tag.strip()]
             tags += cleaned_tags_en
 
