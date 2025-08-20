@@ -97,7 +97,8 @@
     "故障机器人",
     "Defect bot",
     "机器人",
-    "杂鱼"
+    "杂鱼",
+    "Robot"
   ],
   [
     "Monster",
@@ -105,7 +106,8 @@
     "故障机器人",
     "Defect bot",
     "机器人",
-    "杂鱼"
+    "杂鱼",
+    "Robot"
   ],
   [
     "Monster",
@@ -113,7 +115,8 @@
     "故障机器人",
     "Defect bot",
     "机器人",
-    "杂鱼"
+    "杂鱼",
+    "Robot"
   ],
   [
     "Monster",
@@ -121,7 +124,8 @@
     "故障机器人",
     "Defect bot",
     "机器人",
-    "杂鱼"
+    "杂鱼",
+    "Robot"
   ],
   [
     "Monster",
@@ -129,7 +133,7 @@
     "工兵机器人",
     "Miner bot",
     "机器人",
-    "Construct"
+    "Robot"
   ],
   [
     "Monster",
@@ -137,7 +141,7 @@
     "工兵机器人",
     "Miner bot",
     "机器人",
-    "Construct"
+    "Robot"
   ],
   [
     "Monster",
@@ -145,7 +149,7 @@
     "工兵机器人",
     "Miner bot",
     "机器人",
-    "Construct"
+    "Robot"
   ],
   [
     "Monster",
@@ -153,7 +157,7 @@
     "工兵机器人",
     "Miner bot",
     "机器人",
-    "Construct"
+    "Robot"
   ],
   [
     "Monster",
@@ -161,7 +165,7 @@
     "迷你工厂",
     "Mini factory",
     "机器人",
-    "Construct"
+    "Robot"
   ],
   [
     "Monster",
@@ -169,7 +173,7 @@
     "迷你工厂",
     "Mini factory",
     "机器人",
-    "Construct"
+    "Robot"
   ],
   [
     "Monster",
@@ -177,7 +181,7 @@
     "迷你工厂",
     "Mini factory",
     "机器人",
-    "Construct"
+    "Robot"
   ],
   [
     "Monster",
@@ -185,63 +189,71 @@
     "迷你工厂",
     "Mini factory",
     "机器人",
-    "Construct"
+    "Robot"
   ],
   [
     "Monster",
     "怪物",
     "自爆机器人",
     "Kamikaze bot",
-    "机器人"
+    "机器人",
+    "Robot"
   ],
   [
     "Monster",
     "怪物",
     "自爆机器人",
     "Kamikaze bot",
-    "机器人"
+    "机器人",
+    "Robot"
   ],
   [
     "Monster",
     "怪物",
     "自爆机器人",
     "Kamikaze bot",
-    "机器人"
+    "机器人",
+    "Robot"
   ],
   [
     "Monster",
     "怪物",
     "自爆机器人",
     "Kamikaze bot",
-    "机器人"
+    "机器人",
+    "Robot"
   ],
   [
     "Monster",
     "怪物",
     "哨戒机器人",
     "Sentinel bot",
-    "机器人"
+    "机器人",
+    "Robot"
   ],
   [
     "Monster",
     "怪物",
     "哨戒机器人",
     "Sentinel bot",
-    "机器人"
+    "机器人",
+    "Robot"
   ],
   [
     "Monster",
     "怪物",
     "哨戒机器人",
     "Sentinel bot",
-    "机器人"
+    "机器人",
+    "Robot"
   ],
   [
     "Monster",
     "怪物",
     "哨戒机器人",
     "Sentinel bot",
-    "机器人"
+    "机器人",
+    "Robot"
   ],
   [
     "Monster",
@@ -249,7 +261,7 @@
     "龙蛋",
     "Egg",
     "龙",
-    "Construct"
+    "Dragon"
   ],
   [
     "Monster",
@@ -257,7 +269,7 @@
     "龙蛋",
     "Egg",
     "龙",
-    "Construct"
+    "Dragon"
   ],
   [
     "Monster",
@@ -265,7 +277,7 @@
     "龙蛋",
     "Egg",
     "龙",
-    "Construct"
+    "Dragon"
   ],
   [
     "Monster",
@@ -273,7 +285,7 @@
     "龙蛋",
     "Egg",
     "龙",
-    "Construct"
+    "Dragon"
   ],
   [
     "Monster",

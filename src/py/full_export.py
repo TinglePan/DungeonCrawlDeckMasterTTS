@@ -157,5 +157,4 @@ def main():
 
 
 if __name__ == '__main__':
-    process_tags()
-    process_sheets("sheet/")
+    main()
