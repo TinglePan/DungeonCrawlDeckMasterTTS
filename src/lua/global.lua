@@ -152,22 +152,52 @@ function checkTagsEqual(tagsA, tagsB)
     return true
 end
 
-function getCopiesWithTag(deck, tag)
+function getCopiesWithTag(deck, targetTag)
     local deckObjects = deck.getObjects()
     local matchedCards = {}
-    
     -- 遍历牌组中的每张卡牌
     for i, cardInfo in ipairs(deckObjects) do
         local cardTags = cardInfo.tags -- 获取当前卡牌的Tag列表
         for _, tag in ipairs(cardTags) do
             if tag == targetTag then
-                print("found match ", tag)
                 table.insert(matchedCards, cardInfo.guid) -- 记录匹配卡牌的GUID
                 break
             end
         end
     end
     return matchedCards
+end
+
+function compareTags(tagsA, tagsB)
+    for _, tag in ipairs(tagsA) do
+        local foundTag = false
+        for _, otherTag in ipairs(tagsB) do
+            if tag == otherTag then
+                foundTag = true
+                break
+            end
+        end
+        if not foundTag then
+            return false
+        end
+    end
+    return true
+end
+
+function takeCopies(deck, tags, count)
+    local cards = deck.getObjects()
+    local copies = {}
+    local takenCount = 0
+    for _, card in ipairs(cards) do
+        if compareTags(card.tags , tags) then
+            table.insert(copies, card)
+            takenCount = takenCount + 1
+            if takenCount >= count then
+                break
+            end
+        end
+    end
+    return copies
 end
 
 function takeAllCopies(sourceDeck, cardName, targetDeck, untilCount)
@@ -222,31 +252,50 @@ function buildStructureDeckCoroutine()
     for _, deckName in ipairs(currentStructureDeck) do
         structureDeckDef = structureDeckDefs[deckName]
         for cardName, count in pairs(structureDeckDef) do
-            print("cardName, count:", cardName, " ", count)
             local cardGuidList = getCopiesWithTag(decks.monster, cardName)
-            print("getGuidList ", cardGuidList)
             for i = 1, count do
-                print("targetDeck is ", targetDeck)
-                print("targetDeck == nil ", targetDeck == nil)
                 if targetDeck == nil then
                     local card = decks.monster.takeObject({
                         guid = cardGuidList[i],
                         position = targetPos
                     })
                     targetDeck = card
-                    print("take card 1")
                     coroutine.yield()
                 else
-                    print("take card 2, ", #cardGuidList)
-                    local card = deck.monster.takeObject({
+                    local card = decks.monster.takeObject({
                         guid = cardGuidList[i]
                     })
-                    print("take card 3")
                     targetDeck = targetDeck.putObject(card)
-                    print("take card 4", card.tags)
                 end
             end
         end
+    end
+    decks.trap.shuffle()
+    local pickedTrapCards = {}
+    for _, trapCard in ipairs(decks.trap.getObjects()) do
+        local hasPicked = false
+        for _, pickedTrapCard in ipairs(pickedTrapCards) do
+            if compareTags(pickedTrapCard.tags, trapCard.tags) then
+                hasPicked = true
+                break
+            end
+        end
+        print("c")
+        if not hasPicked then
+            local copies = takeCopies(decks.trap, trapCard.tags, 2)
+            for _, copy in ipairs(copies) do
+                print("get card ", copy)
+                table.insert(pickedTrapCards, copy)
+            end
+        end
+        if #pickedTrapCards >= 10 then
+            break
+        end
+    end
+    print("picked trap cards", #pickedTrapCards)
+    for _, pickedTrapCard in ipairs(pickedTrapCards) do
+        local card = decks.trap.takeObject({guid = pickedTrapCard.guid})
+        targetDeck = targetDeck.putObject(card)
     end
     decks.main = targetDeck
     decks.main.shuffle()
@@ -258,7 +307,7 @@ function buildMainDeck()
     coroutine.resume(co)
     Wait.time(function()
         coroutine.resume(co)
-        mergeDecks({decks.monster, decks.trap})
-        decks.monster.shuffle()
+        -- mergeDecks({decks.monster, decks.trap})
+        -- decks.monster.shuffle()
     end, 1)
 end
