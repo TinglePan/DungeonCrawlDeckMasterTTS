@@ -191,56 +191,56 @@
     "Monster",
     "怪物",
     "自爆机器人",
-    "",
+    "Kamikaze bot",
     "机器人"
   ],
   [
     "Monster",
     "怪物",
     "自爆机器人",
-    "",
+    "Kamikaze bot",
     "机器人"
   ],
   [
     "Monster",
     "怪物",
     "自爆机器人",
-    "",
+    "Kamikaze bot",
     "机器人"
   ],
   [
     "Monster",
     "怪物",
     "自爆机器人",
-    "",
+    "Kamikaze bot",
     "机器人"
   ],
   [
     "Monster",
     "怪物",
     "哨戒机器人",
-    "",
+    "Sentinel bot",
     "机器人"
   ],
   [
     "Monster",
     "怪物",
     "哨戒机器人",
-    "",
+    "Sentinel bot",
     "机器人"
   ],
   [
     "Monster",
     "怪物",
     "哨戒机器人",
-    "",
+    "Sentinel bot",
     "机器人"
   ],
   [
     "Monster",
     "怪物",
     "哨戒机器人",
-    "",
+    "Sentinel bot",
     "机器人"
   ],
   [
@@ -279,57 +279,65 @@
     "Monster",
     "怪物",
     "麻将龙",
-    "",
-    "龙"
+    "Mahjong dragon",
+    "龙",
+    "Dragon"
   ],
   [
     "Monster",
     "怪物",
     "麻将龙",
-    "",
-    "龙"
+    "Mahjong dragon",
+    "龙",
+    "Dragon"
   ],
   [
     "Monster",
     "怪物",
     "麻将龙",
-    "",
-    "龙"
+    "Mahjong dragon",
+    "龙",
+    "Dragon"
   ],
   [
     "Monster",
     "怪物",
     "麻将龙",
-    "",
-    "龙"
+    "Mahjong dragon",
+    "龙",
+    "Dragon"
   ],
   [
     "Monster",
     "怪物",
     "大麻将龙",
-    "",
-    "龙"
+    "Greater mahjong dragon",
+    "龙",
+    "Dragon"
   ],
   [
     "Monster",
     "怪物",
     "大麻将龙",
-    "",
-    "龙"
+    "Greater mahjong dragon",
+    "龙",
+    "Dragon"
   ],
   [
     "Monster",
     "怪物",
     "大麻将龙",
-    "",
-    "龙"
+    "Greater mahjong dragon",
+    "龙",
+    "Dragon"
   ],
   [
     "Monster",
     "怪物",
     "大麻将龙",
-    "",
-    "龙"
+    "Greater mahjong dragon",
+    "龙",
+    "Dragon"
   ],
   [
     "Monster",
@@ -399,61 +407,69 @@
     "Monster",
     "怪物",
     "杂鱼史莱姆",
-    "",
+    "Mob slime",
     "史莱姆",
-    "杂鱼"
+    "杂鱼",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "杂鱼史莱姆",
-    "",
+    "Mob slime",
     "史莱姆",
-    "杂鱼"
+    "杂鱼",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "杂鱼史莱姆",
-    "",
+    "Mob slime",
     "史莱姆",
-    "杂鱼"
+    "杂鱼",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "杂鱼史莱姆",
-    "",
+    "Mob slime",
     "史莱姆",
-    "杂鱼"
+    "杂鱼",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "史莱姆塔",
-    "",
-    "史莱姆"
+    "Slime tower",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "史莱姆塔",
-    "",
-    "史莱姆"
+    "Slime tower",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "史莱姆塔",
-    "",
-    "史莱姆"
+    "Slime tower",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "史莱姆塔",
-    "",
-    "史莱姆"
+    "Slime tower",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
@@ -491,42 +507,48 @@
     "Monster",
     "怪物",
     "黏菌",
-    "",
-    "史莱姆"
+    "Goo",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "黏菌",
-    "",
-    "史莱姆"
+    "Goo",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "黏菌",
-    "",
-    "史莱姆"
+    "Goo",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "黏菌",
-    "",
-    "史莱姆"
+    "Goo",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "软泥怪",
-    "",
-    "史莱姆"
+    "Sludge",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "软泥怪",
-    "",
-    "史莱姆"
+    "Sludge",
+    "史莱姆",
+    "Slime"
   ]
 ]

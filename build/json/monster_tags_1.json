@@ -3,43 +3,49 @@
     "Monster",
     "怪物",
     "软泥怪",
-    "",
-    "史莱姆"
+    "Sludge",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "软泥怪",
-    "",
-    "史莱姆"
+    "Sludge",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "金属史莱姆",
-    "",
-    "史莱姆"
+    "Metal slime",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "金属史莱姆",
-    "",
-    "史莱姆"
+    "Metal slime",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "金属史莱姆",
-    "",
-    "史莱姆"
+    "Metal slime",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
     "怪物",
     "金属史莱姆",
-    "",
-    "史莱姆"
+    "Metal slime",
+    "史莱姆",
+    "Slime"
   ],
   [
     "Monster",
@@ -405,33 +411,37 @@
     "Monster",
     "怪物",
     "普通猫",
-    "",
+    "Normal cat",
     "猫",
-    "杂鱼"
+    "杂鱼",
+    "Cat"
   ],
   [
     "Monster",
     "怪物",
     "普通猫",
-    "",
+    "Normal cat",
     "猫",
-    "杂鱼"
+    "杂鱼",
+    "Cat"
   ],
   [
     "Monster",
     "怪物",
     "普通猫",
-    "",
+    "Normal cat",
     "猫",
-    "杂鱼"
+    "杂鱼",
+    "Cat"
   ],
   [
     "Monster",
     "怪物",
     "普通猫",
-    "",
+    "Normal cat",
     "猫",
-    "杂鱼"
+    "杂鱼",
+    "Cat"
   ],
   [
     "Monster",
@@ -533,28 +543,32 @@
     "Monster",
     "怪物",
     "随从猫",
-    "",
-    "猫"
+    "Campanion cat",
+    "猫",
+    "Cat"
   ],
   [
     "Monster",
     "怪物",
     "随从猫",
-    "",
-    "猫"
+    "Campanion cat",
+    "猫",
+    "Cat"
   ],
   [
     "Monster",
     "怪物",
     "随从猫",
-    "",
-    "猫"
+    "Campanion cat",
+    "猫",
+    "Cat"
   ],
   [
     "Monster",
     "怪物",
     "随从猫",
-    "",
-    "猫"
+    "Campanion cat",
+    "猫",
+    "Cat"
   ]
 ]
