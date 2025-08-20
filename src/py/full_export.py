@@ -21,7 +21,7 @@ def entry_name_from_sheet_name(sheet_name):
     raise f"Unexpected sheet name {sheet_name}"
 
 
-def entry_name_to_card_file_name(entry_name, index = 0):
+def entry_name_to_card_file_name(entry_name, index = 1):
     res = entry_name[0].upper() + entry_name[1:] + "Cards"
     if index > 1:
         res += str(index)
@@ -73,7 +73,7 @@ def process_sheets(sheet_dir_path):
                 n_files = entry_count // 70 + 1
                 for i in range(n_files):
                     sheet_source[entry_name].append([
-                        relative_path2github_url(f"build/image/{entry_name_to_card_file_name(entry_name, i)}"),
+                        relative_path2github_url(f"build/image/{entry_name_to_card_file_name(entry_name, i + 1)}"),
                         relative_path2github_url(f"build/image/{entry_name_to_card_back_file_name(entry_name)}"),
                         False if entry_name != "extra" else True,
                         min(70, entry_count - i * 70)
@@ -127,7 +127,7 @@ def extract_tags(file_path, innate_tags=None):
     urls = []
     entry_name = entry_name_from_sheet_name(file_path)
     for i in range(n_files):
-        export_path = f'build/json/{entry_name}_tags.json' if i == 0 else f"build/json/{entry_name}_tags_{i}.json"
+        export_path = f'build/json/{entry_name}_tags.json' if i == 0 else f"build/json/{entry_name}_tags_{i + 1}.json"
         data = result[i * 70: (i + 1) * 70 if (i + 1) * 70 < len(result) else len(result)]
         # 导出JSON文件
         with open(export_path, 'w', encoding='utf-8') as f:
