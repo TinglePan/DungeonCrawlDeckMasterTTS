@@ -43,7 +43,8 @@ function onLoad()
     end)
     WebRequest.get(structureDeckSource, function(request)
         if not request.is_error then
-            structureDeckDefs = JSON.decode(request.txt)
+            structureDeckDefs = JSON.decode(request.text)
+            print("structureDeckDefs ", structureDeckDefs)
         end
     end)
     cardDealer = getObjectFromGUID("b9c3d5")
@@ -160,6 +161,7 @@ function getCopiesWithTag(deck, tag)
         local cardTags = cardInfo.tags -- 获取当前卡牌的Tag列表
         for _, tag in ipairs(cardTags) do
             if tag == targetTag then
+                print("found match ", tag)
                 table.insert(matchedCards, cardInfo.guid) -- 记录匹配卡牌的GUID
                 break
             end
@@ -220,20 +222,28 @@ function buildStructureDeckCoroutine()
     for _, deckName in ipairs(currentStructureDeck) do
         structureDeckDef = structureDeckDefs[deckName]
         for cardName, count in pairs(structureDeckDef) do
-            local cardGuidList = getAllCardsWithTag(decks.monster, cardName)
+            print("cardName, count:", cardName, " ", count)
+            local cardGuidList = getCopiesWithTag(decks.monster, cardName)
+            print("getGuidList ", cardGuidList)
             for i = 1, count do
+                print("targetDeck is ", targetDeck)
+                print("targetDeck == nil ", targetDeck == nil)
                 if targetDeck == nil then
                     local card = decks.monster.takeObject({
                         guid = cardGuidList[i],
                         position = targetPos
                     })
                     targetDeck = card
+                    print("take card 1")
                     coroutine.yield()
                 else
+                    print("take card 2, ", #cardGuidList)
                     local card = deck.monster.takeObject({
                         guid = cardGuidList[i]
                     })
+                    print("take card 3")
                     targetDeck = targetDeck.putObject(card)
+                    print("take card 4", card.tags)
                 end
             end
         end

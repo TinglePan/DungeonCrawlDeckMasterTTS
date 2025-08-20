@@ -112,11 +112,11 @@ def extract_tags(file_path, innate_tags=None):
         tags += [card_name, card_name_en]
         if 'tags' in row:
             raw_tags = re.split('[,，]', get_field_as_str(row['tags'])) if pd.notna(row['tags']) else []
-            cleaned_tags = [tag.strip() for tag in raw_tags if tag.strip()]
+            cleaned_tags = [tag.strip() for tag in raw_tags if tag.strip() != ""]
             tags += cleaned_tags
         if 'tagsEn' in row:
             raw_tags_en = re.split('[,，]', get_field_as_str(row['tagsEn'])) if pd.notna(row['tagsEn']) else []
-            cleaned_tags_en = [tag.strip() for tag in raw_tags_en if tag.strip()]
+            cleaned_tags_en = [tag.strip() for tag in raw_tags_en if tag.strip() != ""]
             tags += cleaned_tags_en
 
         # 构建字典并添加到结果列表
