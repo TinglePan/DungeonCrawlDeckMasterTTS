@@ -36,7 +36,6 @@ def entry_name_to_card_back_file_name(entry_name):
         "event": "incident",
         "loot": "incident",
         "item": "artifact",
-        "trinket": "artifact",
         "gear": "artifact",
         "skill": "upgrade",
         "attribute": "upgrade",

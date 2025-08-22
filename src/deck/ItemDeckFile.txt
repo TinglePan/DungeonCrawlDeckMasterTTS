@@ -10,10 +10,6 @@ VISUAL=G, 10, 10
 HTMLFONT=NameFont,华文宋体,16,,#000000,CENTER
 ;Name
 HTMLTEXT="1-{(cardName)}",[cardName],0%,5%,100%,8%,#FFFFFF,0,,100,NameFont
-;TagsFont
-HTMLFONT=TagFont,华文宋体,8,,#000000,CENTER
-;Tags
-HTMLTEXT="1-{(TAGS)}",[TAGS],0%,15%,100%,5%,#FFFFFF,0,,100,TagFont
 ;EffectFont
 HTMLFONT=EffectFont,华文宋体,8,,#000000
 ;MainEffects

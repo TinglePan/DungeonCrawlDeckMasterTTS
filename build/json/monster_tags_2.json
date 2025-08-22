@@ -2,70 +2,6 @@
   [
     "Monster",
     "怪物",
-    "软泥怪",
-    "Sludge",
-    "史莱姆",
-    "Slime"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "软泥怪",
-    "Sludge",
-    "史莱姆",
-    "Slime"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "金属史莱姆",
-    "Metal slime",
-    "史莱姆",
-    "Slime"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "金属史莱姆",
-    "Metal slime",
-    "史莱姆",
-    "Slime"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "金属史莱姆",
-    "Metal slime",
-    "史莱姆",
-    "Slime"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "金属史莱姆",
-    "Metal slime",
-    "史莱姆",
-    "Slime"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "游荡者",
-    "Rogue",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "游荡者",
-    "Rogue",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
     "游荡者",
     "Rogue",
     "人类",
@@ -148,7 +84,7 @@
     "怪物",
     "哥布林",
     "Goblin",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -156,7 +92,7 @@
     "怪物",
     "哥布林",
     "Goblin",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -164,7 +100,7 @@
     "怪物",
     "哥布林",
     "Goblin",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -172,7 +108,7 @@
     "怪物",
     "哥布林",
     "Goblin",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -180,7 +116,7 @@
     "怪物",
     "兽人",
     "Orc",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -188,7 +124,7 @@
     "怪物",
     "兽人",
     "Orc",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -196,7 +132,7 @@
     "怪物",
     "兽人",
     "Orc",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -204,39 +140,39 @@
     "怪物",
     "兽人",
     "Orc",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
     "Monster",
     "怪物",
-    "大哥布林",
+    "夜种王",
     "Greater goblin",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
     "Monster",
     "怪物",
-    "大哥布林",
+    "夜种王",
     "Greater goblin",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
     "Monster",
     "怪物",
-    "大哥布林",
+    "夜种王",
     "Greater goblin",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
     "Monster",
     "怪物",
-    "大哥布林",
+    "夜种王",
     "Greater goblin",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -244,7 +180,7 @@
     "怪物",
     "食人魔",
     "Ogre",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -252,7 +188,7 @@
     "怪物",
     "食人魔",
     "Ogre",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -260,7 +196,7 @@
     "怪物",
     "食人魔",
     "Ogre",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -268,7 +204,7 @@
     "怪物",
     "食人魔",
     "Ogre",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -276,7 +212,7 @@
     "怪物",
     "掉宝地精",
     "Krampus",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -284,7 +220,7 @@
     "怪物",
     "掉宝地精",
     "Krampus",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -292,7 +228,7 @@
     "怪物",
     "掉宝地精",
     "Krampus",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -300,7 +236,7 @@
     "怪物",
     "掉宝地精",
     "Krampus",
-    "亚人",
+    "异种",
     "Humanoid"
   ],
   [
@@ -570,5 +506,69 @@
     "Campanion cat",
     "猫",
     "Cat"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "骷髅",
+    "Skeleton",
+    "不死",
+    "Undead"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "骷髅",
+    "Skeleton",
+    "不死",
+    "Undead"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "骷髅",
+    "Skeleton",
+    "不死",
+    "Undead"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "骷髅",
+    "Skeleton",
+    "不死",
+    "Undead"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "骷髅牧师",
+    "Skeleton priest",
+    "不死",
+    "Undead"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "骷髅牧师",
+    "Skeleton priest",
+    "不死",
+    "Undead"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "骷髅牧师",
+    "Skeleton priest",
+    "不死",
+    "Undead"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "骷髅牧师",
+    "Skeleton priest",
+    "不死",
+    "Undead"
   ]
 ]
