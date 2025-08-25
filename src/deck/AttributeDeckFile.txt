@@ -11,8 +11,10 @@ VISUAL=G, 10, 10
 HTMLFONT=NameFont,华文宋体,16,,#000000,CENTER
 ;Name
 HTMLTEXT="1-{(cardName)}",[cardName],0%,5%,100%,8%,#FFFFFF,0,,100,NameFont
-;TagsFont
-HTMLFONT=TagFont,华文宋体,8,,#000000,CENTER
+;NumberFont
+HTMLFONT=NumberFont,华文宋体,20,,#000000,CENTER
+;Rank(size)
+HTMLTEXT="1-{(RANK)}",[RANK],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
 IMAGE=,"..\..\image\icon\attribute_inverted.png",2%,4%,10%,8%
 ENDVISUAL
 Display = "..\..\build\image\AttributeCards.png",,,10x7

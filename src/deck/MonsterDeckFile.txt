@@ -17,7 +17,7 @@ HTMLFONT=TagFont,华文宋体,8,,#000000,CENTER
 HTMLTEXT="1-{(tags)}",[tags],0%,15%,100%,5%,#FFFFFF,0,,100,TagFont
 ;EffectFont
 HTMLFONT=EffectFont,华文宋体,8,,#000000
-;SubEffects
+;Effects
 HTMLTEXT="1-{(effect)}",[effect],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
 ;NumberFont
 HTMLFONT=NumberFont,华文宋体,20,,#000000,CENTER

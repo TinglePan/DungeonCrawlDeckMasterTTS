@@ -16,10 +16,10 @@ HTMLTEXT="1-{(cardName)}",[cardName],0%,5%,100%,8%,#FFFFFF,0,,100,NameFont
 HTMLFONT=AltFont,华文宋体,8,,#000000,CENTER
 ;Alt
 HTMLTEXT="1-{(alt)}",[alt],0%,15%,100%,5%,#FFFFFF,0,,100,AltFont
-;RequirementFont
-HTMLFONT=RequirementFont,华文宋体,8,,#000000,CENTER
-;Requirement
-HTMLTEXT="1-{(requirement)}",[requirement],0%,55%,100%,5%,#FFFFFF,0,,100,RequirementFont
+;NumberFont
+HTMLFONT=NumberFont,华文宋体,20,,#000000,CENTER
+;Rank(size)
+HTMLTEXT="1-{(RANK)}",[RANK],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
 ;EffectFont
 HTMLFONT=EffectFont,华文宋体,8,,#000000
 ;MainEffects
