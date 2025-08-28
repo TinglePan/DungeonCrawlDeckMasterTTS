@@ -1,92 +1,84 @@
 {
   "attribute": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/AttributeCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackUpgrade.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/AttributeCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackUpgrade.png?dummy=1756339804",
       false,
       15
     ]
   ],
   "challenge": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ChallengeCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackChallenge.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ChallengeCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackChallenge.png?dummy=1756339804",
       false,
       10
     ]
   ],
   "event": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/EventCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackIncident.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/EventCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackIncident.png?dummy=1756339804",
       false,
       17
     ]
   ],
   "extra": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ExtraCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackExtra.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ExtraCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackExtra.png?dummy=1756339804",
       true,
       43
     ]
   ],
-  "gear": [
-    [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/GearCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png?dummy=1756333684",
-      false,
-      20
-    ]
-  ],
   "item": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ItemCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/ItemCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackArtifact.png?dummy=1756339804",
       false,
-      43
+      41
     ]
   ],
   "loot": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/LootCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackIncident.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/LootCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackIncident.png?dummy=1756339804",
       false,
       17
     ]
   ],
   "monster": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png?dummy=1756339804",
       false,
       70
     ],
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards2.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards2.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png?dummy=1756339804",
       false,
       70
     ],
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards3.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/MonsterCards3.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackMonster.png?dummy=1756339804",
       false,
       28
     ]
   ],
   "skill": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/SkillCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackUpgrade.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/SkillCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackUpgrade.png?dummy=1756339804",
       false,
-      15
+      26
     ]
   ],
   "trap": [
     [
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/TrapCards.png?dummy=1756333684",
-      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackTrap.png?dummy=1756333684",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/TrapCards.png?dummy=1756339804",
+      "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/image/CardBackTrap.png?dummy=1756339804",
       false,
       42
     ]
