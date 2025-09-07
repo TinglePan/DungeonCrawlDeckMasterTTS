@@ -1,4 +1,3 @@
-LINKMULDIS=rank
 LINKMULTI=maxCount
 LINK=..\..\sheet\SkillCardData.xlsx
 ;Settings
@@ -7,7 +6,7 @@ PAGE=21,29.7,PORTRAIT
 BORDER=RECTANGLE, #000000, .1
 MARGINS=.5,.5,1,1
 
-VISUAL=G, 10, 10
+VISUAL=GS, 10, 10
 ;NameFont
 HTMLFONT=NameFont,华文宋体,16,,#000000,CENTER
 ;Name
@@ -17,15 +16,15 @@ HTMLFONT=AltFont,华文宋体,8,,#000000,CENTER
 ;Alt
 HTMLTEXT="1-{(alt)}",[alt],0%,15%,100%,5%,#FFFFFF,0,,100,AltFont
 ;NumberFont
-HTMLFONT=NumberFont,华文宋体,20,,#000000,CENTER
+HTMLFONT=NumberFont,华文宋体,12,,#000000,CENTER
 ;Rank(size)
-HTMLTEXT="1-{(RANK)}",[RANK],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
+HTMLTEXT="1-{(cost)}",[cost],47%,47%,6%,6%,#FFFFFF,0,,100,NumberFont
 ;EffectFont
 HTMLFONT=EffectFont,华文宋体,8,,#000000
 ;MainEffects
-HTMLTEXT="1-{(EFFECT)}",[EFFECT],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
+HTMLTEXT="1-{(effect)}",[effect],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
 IMAGE=,"..\..\image\icon\skill_inverted.png",2%,4%,10%,8%
 ENDVISUAL
-Display = "..\..\build\image\SkillCards.png",,,10x7
+Display=..\..\build\image\SkillCards.png,,,10x7
 
 Print = 0

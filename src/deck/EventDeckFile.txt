@@ -19,6 +19,10 @@ HTMLTEXT="1-{(tags)}",[tags],0%,15%,100%,5%,#FFFFFF,0,,100,TagFont
 HTMLFONT=EffectFont,华文宋体,8,,#000000
 ;MainEffects
 HTMLTEXT="1-{(EFFECT)}",[EFFECT],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
+;NumberFont
+HTMLFONT=NumberFont,华文宋体,20,,#000000,CENTER
+;Rank(size)
+HTMLTEXT="1-{(RANK)}",[RANK],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
 IMAGE=,"..\..\image\icon\event_inverted.png",2%,4%,10%,8%
 ENDVISUAL
 Display = "..\..\build\image\EventCards.png", 1, 70
