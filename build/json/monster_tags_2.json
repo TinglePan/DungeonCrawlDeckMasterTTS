@@ -2,38 +2,6 @@
   [
     "Monster",
     "怪物",
-    "游荡者",
-    "Rogue",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "游荡者",
-    "Rogue",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "刺客",
-    "Assassin",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "刺客",
-    "Assassin",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
     "刺客",
     "Assassin",
     "人类",
@@ -570,5 +538,37 @@
     "Skeleton priest",
     "不死",
     "Undead"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "烟",
+    "Smoke",
+    "暗影",
+    "Shadow"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "烟",
+    "Smoke",
+    "暗影",
+    "Shadow"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "烟",
+    "Smoke",
+    "暗影",
+    "Shadow"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "烟",
+    "Smoke",
+    "暗影",
+    "Shadow"
   ]
 ]

@@ -198,64 +198,32 @@
   [
     "Monster",
     "怪物",
-    "麻将龙",
-    "Mahjong dragon",
+    "宝牌龙",
+    "Doragon",
     "龙",
     "Dragon"
   ],
   [
     "Monster",
     "怪物",
-    "麻将龙",
-    "Mahjong dragon",
+    "宝牌龙",
+    "Doragon",
     "龙",
     "Dragon"
   ],
   [
     "Monster",
     "怪物",
-    "麻将龙",
-    "Mahjong dragon",
+    "宝牌龙",
+    "Doragon",
     "龙",
     "Dragon"
   ],
   [
     "Monster",
     "怪物",
-    "麻将龙",
-    "Mahjong dragon",
-    "龙",
-    "Dragon"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "大麻将龙",
-    "Greater mahjong dragon",
-    "龙",
-    "Dragon"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "大麻将龙",
-    "Greater mahjong dragon",
-    "龙",
-    "Dragon"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "大麻将龙",
-    "Greater mahjong dragon",
-    "龙",
-    "Dragon"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "大麻将龙",
-    "Greater mahjong dragon",
+    "宝牌龙",
+    "Doragon",
     "龙",
     "Dragon"
   ],
@@ -564,6 +532,38 @@
     "怪物",
     "游荡者",
     "Rogue",
+    "人类",
+    "Human"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "游荡者",
+    "Rogue",
+    "人类",
+    "Human"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "游荡者",
+    "Rogue",
+    "人类",
+    "Human"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "刺客",
+    "Assassin",
+    "人类",
+    "Human"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "刺客",
+    "Assassin",
     "人类",
     "Human"
   ]
