@@ -17,7 +17,7 @@ HTMLFONT=AltFont,华文宋体,8,,#000000,CENTER
 HTMLTEXT="1-{(alt)}",[alt],0%,15%,100%,5%,#FFFFFF,0,,100,AltFont
 ;NumberFont
 HTMLFONT=NumberFont,华文宋体,12,,#000000,CENTER
-;Rank(size)
+;cost
 HTMLTEXT="1-{(cost)}",[cost],47%,47%,6%,6%,#FFFFFF,0,,100,NumberFont
 ;EffectFont
 HTMLFONT=EffectFont,华文宋体,8,,#000000
