@@ -11,6 +11,6 @@ VISUAL=G, 10, 10
 RECTANGLE="1-{(cardBackFile)}",0%,0%,100%,100%,#000000
 IMAGE="1-{(cardBackFile)}",JOIN("..\..\image\cardback\", [cardBackFile]),10%,20%,80%,60%
 ENDVISUAL
-Display = "..\..\build\image\CardBackExtras.png",,,10x7
+Display = "..\..\build\image\CardBackExtra.png",,,10x7
 
 Print = 0
