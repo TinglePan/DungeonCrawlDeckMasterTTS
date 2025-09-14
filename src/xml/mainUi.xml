@@ -1,0 +1,47 @@
+<!-- Welcome popup -->
+<Defaults>
+    <Button color="black" textColor="white" />
+    <Button class="roller" onClick="rollDice" />
+</Defaults>
+
+<VerticalLayout
+    id="rollerLayout"
+    height="120"
+    width="120"
+    allowDragging="true"
+    returnToOriginalPositionWhenReleased="false"
+    rectAlignment="UpperLeft"
+    offsetXY="300 -80"
+    >
+    <Button
+        onClick="loadDecks"
+        text="Load decks"
+        >
+    </Button>
+    <Button
+        onclick="tagDecks"
+        text="Tag decks"
+        >
+    </Button>
+    <Button
+        onclick="mergeAllDecks"
+        text="Merge all decks"
+        >
+    </Button>
+    <Button
+        onclick="refreshBuyUpgradeZone"
+        text="Refresh buy upgrade zone"
+        >
+    </Button>
+    <Button
+        onclick="buildMainDeck"
+        text="Build main deck"
+        >
+    </Button>
+    <Button
+        onclick="bindMainDeck"
+        text="Bind main deck"
+        >
+    </Button>
+
+</VerticalLayout>

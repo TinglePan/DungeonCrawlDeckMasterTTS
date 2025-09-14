@@ -4,13 +4,16 @@ deckDefSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMas
 structureDeckSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/structure_decks.json?dummy=" .. os.time()
 tagFileSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/tag_files.json?dummy=" .. os.time()
 
+hSpacing = 2.5
+vSpacing = 3
+
+
 deckDefs = {}
 tagFiles = {}
 decks = {}
 structureDeckDefs = {}
 mainDeckMonsterCount = 40
 mainDeckTrapCount = 10
-cardDealer = nil
 tags = {
     monster = {},
     trap = {}
@@ -18,7 +21,9 @@ tags = {
 startColIndex = -3
 startRowIndex = -4
 currentStructureDeck = {"slime", "robot"}
-
+cardDealer = nil
+buyUpgradeZone = nil
+mainDeckZone = nil
 
 --[[ The onLoad event is called after the game save finishes loading. --]]
 function onLoad()
@@ -44,10 +49,11 @@ function onLoad()
     WebRequest.get(structureDeckSource, function(request)
         if not request.is_error then
             structureDeckDefs = JSON.decode(request.text)
-            print("structureDeckDefs ", structureDeckDefs)
         end
     end)
     cardDealer = getObjectFromGUID("b9c3d5")
+    buyUpgradeZone = getObjectFromGUID("b38513")
+    mainDeckZone = getObjectFromGUID("d8331f")
 end
 
 --[[ The onUpdate event is called once per frame. --]]
@@ -58,7 +64,7 @@ end
 function spawnDeck(rowIdx, colIdx, faceUrl, backUrl, isUniqueBack, nCards)
     local object = spawnObject({
         type = "DeckCustom",
-        position = {colIdx * 2.5, 1, rowIdx * 3.5},
+        position = {colIdx * hSpacing, 1, rowIdx * vSpacing},
         rotation = {180, 0, 0},
         scale = {1, 1, 1},
         sound = false
@@ -99,14 +105,14 @@ function tagDecks()
     local coroutines = {}
     for i, deck in ipairs(decks.monster) do
         local targetPos = deck.getPosition()
-        targetPos.z = targetPos.z + 3.5
+        targetPos.z = targetPos.z + vSpacing
         local co = coroutine.create(tagDeck)
         coroutine.resume(co, decks.monster[i], targetPos, tags.monster[i])
         Wait.time(function() _, decks.monster[i] = coroutine.resume(co) end, 0.5)
     end
     for i, deck in ipairs(decks.trap) do
         local targetPos = deck.getPosition()
-        targetPos.z = targetPos.z + 3.5
+        targetPos.z = targetPos.z + vSpacing
         local co = coroutine.create(tagDeck)
         coroutine.resume(co, decks.trap[i], targetPos, tags.trap[i])
         Wait.time(function() _, decks.trap[i] = coroutine.resume(co) end, 0.5)
@@ -231,7 +237,7 @@ end
 
 function buildRandMainDeckCoroutine()
     local targetPos = decks.monster.getPosition()
-    targetPos.z = targetPos.z - 3.5
+    targetPos.z = targetPos.z - vSpacing
     local card = decks.monster.takeObject({
         position = targetPos
     })
@@ -245,9 +251,29 @@ function buildRandMainDeckCoroutine()
     cardDealer.setVar("deck", decks.main)
 end
 
+function refreshBuyUpgradeZone()
+    local objectsInZone = buyUpgradeZone.getObjects()
+    local allCardsInZone = {}
+    for _, obj in ipairs(objectsInZone) do
+        if obj.type == "Card" then
+            table.insert(allCardsInZone, obj)
+        end
+    end
+    for _, card in ipairs(allCardsInZone) do
+        decks.upgrade.putObject(card)
+    end
+    local zonePosition = buyUpgradeZone.getPosition()
+    local zoneScale = buyUpgradeZone.getScale()
+    for i = 1, 5 do
+        local targetPos = {x = zonePosition.x - zoneScale.x / 2 + 2.5 + (i - 1) * hSpacing, y = 1, z = zonePosition.z - zoneScale.z / 2 + 2}
+        decks.upgrade.takeObject({position = targetPos, flip = true})
+    end
+end
+
 function buildStructureDeckCoroutine()
-    local targetPos = decks.monster.getPosition()
-    targetPos.z = targetPos.z - 3.5
+    local targetPos = mainDeckZone.getPosition()
+    -- local targetPos = decks.monster.getPosition()
+    -- targetPos.z = targetPos.z - vSpacing
     local targetDeck = nil
     for _, deckName in ipairs(currentStructureDeck) do
         structureDeckDef = structureDeckDefs[deckName]
@@ -280,11 +306,9 @@ function buildStructureDeckCoroutine()
                 break
             end
         end
-        print("c")
         if not hasPicked then
             local copies = takeCopies(decks.trap, trapCard.tags, 2)
             for _, copy in ipairs(copies) do
-                print("get card ", copy)
                 table.insert(pickedTrapCards, copy)
             end
         end
@@ -292,7 +316,6 @@ function buildStructureDeckCoroutine()
             break
         end
     end
-    print("picked trap cards", #pickedTrapCards)
     for _, pickedTrapCard in ipairs(pickedTrapCards) do
         local card = decks.trap.takeObject({guid = pickedTrapCard.guid})
         targetDeck = targetDeck.putObject(card)
@@ -310,4 +333,21 @@ function buildMainDeck()
         -- mergeDecks({decks.monster, decks.trap})
         -- decks.monster.shuffle()
     end, 1)
+end
+
+function bindMainDeck()
+    local objectsInZone = mainDeckZone.getObjects()
+    local mainDeck = nil
+    for _, obj in ipairs(objectsInZone) do
+        if obj.type == "Deck" then
+            mainDeck = obj
+            break
+        end
+    end
+    print("did")
+    if mainDeck ~= nil then
+        print("found")
+        decks.main = mainDeck
+        cardDealer.setVar("mainDeck", mainDeck)
+    end
 end
