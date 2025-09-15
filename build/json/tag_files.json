@@ -1,10 +1,10 @@
 {
   "monster": [
-    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags.json?dummy=1757906626",
-    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_2.json?dummy=1757906626",
-    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_3.json?dummy=1757906626"
+    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags.json?dummy=1757954480",
+    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_2.json?dummy=1757954480",
+    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/monster_tags_3.json?dummy=1757954480"
   ],
   "trap": [
-    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/trap_tags.json?dummy=1757906626"
+    "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/trap_tags.json?dummy=1757954480"
   ]
 }
