@@ -24,6 +24,7 @@ currentStructureDeck = {"slime", "robot"}
 cardDealer = nil
 buyUpgradeZone = nil
 mainDeckZone = nil
+incidnetDeckZone = nil
 
 --[[ The onLoad event is called after the game save finishes loading. --]]
 function onLoad()
@@ -54,6 +55,7 @@ function onLoad()
     cardDealer = getObjectFromGUID("b9c3d5")
     buyUpgradeZone = getObjectFromGUID("b38513")
     mainDeckZone = getObjectFromGUID("d8331f")
+    incidentDeckZone = getObjectFromGUID("")
 end
 
 --[[ The onUpdate event is called once per frame. --]]
@@ -344,10 +346,18 @@ function bindMainDeck()
             break
         end
     end
-    print("did")
     if mainDeck ~= nil then
-        print("found")
         decks.main = mainDeck
-        cardDealer.setVar("mainDeck", mainDeck)
+    end
+    objectsInZone = incidentDeckZone.getObjects()
+    local incidentDeck = nil
+    for _, obj in ipairs(objectsInZone) do
+        if obj.type == "Deck" then
+            objectsInZone = obj
+            break
+        end
+    end
+    if incidentDeck ~= nil then
+        decks.incident = incidentDeck
     end
 end
