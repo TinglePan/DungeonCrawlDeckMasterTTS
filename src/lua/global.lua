@@ -55,7 +55,7 @@ function onLoad()
     cardDealer = getObjectFromGUID("b9c3d5")
     buyUpgradeZone = getObjectFromGUID("b38513")
     mainDeckZone = getObjectFromGUID("d8331f")
-    incidentDeckZone = getObjectFromGUID("")
+    incidentDeckZone = getObjectFromGUID("d7bd92")
 end
 
 --[[ The onUpdate event is called once per frame. --]]
