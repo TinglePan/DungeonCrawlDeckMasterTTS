@@ -353,7 +353,7 @@ function bindMainDeck()
     local incidentDeck = nil
     for _, obj in ipairs(objectsInZone) do
         if obj.type == "Deck" then
-            objectsInZone = obj
+            incidentDeck = obj
             break
         end
     end
