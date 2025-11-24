@@ -1,8 +1,8 @@
 --[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]
 
-deckDefSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/deck_defs.json?dummy=" .. os.time()
-structureDeckSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/structure_decks.json?dummy=" .. os.time()
-tagFileSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/build/json/tag_files.json?dummy=" .. os.time()
+deckDefSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMasterTTS/main/build/json/deck_defs.json?dummy=" .. os.time()
+presetDeckSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMasterTTS/main/build/json/preset_decks.json?dummy=" .. os.time()
+tagFileSource = "https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMasterTTS/main/build/json/tag_files.json?dummy=" .. os.time()
 
 hSpacing = 2.5
 vSpacing = 3
@@ -11,7 +11,7 @@ vSpacing = 3
 deckDefs = {}
 tagFiles = {}
 decks = {}
-structureDeckDefs = {}
+presetDeckDefs = {}
 mainDeckMonsterCount = 40
 mainDeckTrapCount = 10
 tags = {
@@ -20,11 +20,11 @@ tags = {
 }
 startColIndex = -3
 startRowIndex = -4
-currentStructureDeck = {"slime", "robot"}
+currentPresetDeck = {"slime", "robot"}
 cardDealer = nil
 buyUpgradeZone = nil
 mainDeckZone = nil
-incidnetDeckZone = nil
+encounterDeckZone = nil
 
 --[[ The onLoad event is called after the game save finishes loading. --]]
 function onLoad()
@@ -47,15 +47,15 @@ function onLoad()
             end
         end
     end)
-    WebRequest.get(structureDeckSource, function(request)
+    WebRequest.get(presetDeckSource, function(request)
         if not request.is_error then
-            structureDeckDefs = JSON.decode(request.text)
+            presetDeckDefs = JSON.decode(request.text)
         end
     end)
     cardDealer = getObjectFromGUID("b9c3d5")
     buyUpgradeZone = getObjectFromGUID("b38513")
     mainDeckZone = getObjectFromGUID("d8331f")
-    incidentDeckZone = getObjectFromGUID("d7bd92")
+    encounterDeckZone = getObjectFromGUID("d7bd92")
 end
 
 --[[ The onUpdate event is called once per frame. --]]
@@ -143,11 +143,9 @@ function mergeAllDecks()
         decks[name] = mergeDecks(subDecks)
     end
     -- decks.main = mergeDeck({decks.monster, decks.trap})
-    decks.incident = mergeDecks({decks.event, decks.loot})
-    decks.incident.shuffle()
-    decks.artifact = mergeDecks({decks.item, decks.gear, decks.trinket})
-    decks.artifact.shuffle()
-    decks.upgrade = mergeDecks({decks.attribute, decks.skill})
+    decks.encounter = mergeDecks({decks.event, decks.item})
+    decks.encounter.shuffle()
+    decks.upgrade = mergeDecks({decks.spell, decks.skill, decks.passive})
     decks.upgrade.shuffle()
 end
 
@@ -272,14 +270,14 @@ function refreshBuyUpgradeZone()
     end
 end
 
-function buildStructureDeckCoroutine()
+function buildPresetDeckCoroutine()
     local targetPos = mainDeckZone.getPosition()
     -- local targetPos = decks.monster.getPosition()
     -- targetPos.z = targetPos.z - vSpacing
     local targetDeck = nil
-    for _, deckName in ipairs(currentStructureDeck) do
-        structureDeckDef = structureDeckDefs[deckName]
-        for cardName, count in pairs(structureDeckDef) do
+    for _, deckName in ipairs(currentPresetDeck) do
+        presetDeckDef = presetDeckDefs[deckName]
+        for cardName, count in pairs(presetDeckDef) do
             local cardGuidList = getCopiesWithTag(decks.monster, cardName)
             for i = 1, count do
                 if targetDeck == nil then
@@ -306,6 +304,7 @@ function buildStructureDeckCoroutine()
             if compareTags(pickedTrapCard.tags, trapCard.tags) then
                 hasPicked = true
                 break
+
             end
         end
         if not hasPicked then
@@ -328,7 +327,7 @@ function buildStructureDeckCoroutine()
 end
 
 function buildMainDeck()
-    local co = coroutine.create(buildStructureDeckCoroutine)
+    local co = coroutine.create(buildPresetDeckCoroutine)
     coroutine.resume(co)
     Wait.time(function()
         coroutine.resume(co)
@@ -349,15 +348,15 @@ function bindMainDeck()
     if mainDeck ~= nil then
         decks.main = mainDeck
     end
-    objectsInZone = incidentDeckZone.getObjects()
-    local incidentDeck = nil
+    objectsInZone = encounterDeckZone.getObjects()
+    local encounterDeck = nil
     for _, obj in ipairs(objectsInZone) do
         if obj.type == "Deck" then
-            incidentDeck = obj
+            encounterDeck = obj
             break
         end
     end
-    if incidentDeck ~= nil then
-        decks.incident = incidentDeck
+    if encounterDeck ~= nil then
+        decks.encounter = encounterDeck
     end
 end

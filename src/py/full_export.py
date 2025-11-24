@@ -33,13 +33,12 @@ def entry_name_to_card_back_file_name(entry_name):
     entry_name_2_back_name_map = {
         "monster": "monster",
         "trap": "trap",
-        "event": "incident",
-        "loot": "incident",
-        "item": "artifact",
-        "gear": "artifact",
+        "event": "encounter",
+        "item": "encounter",
         "skill": "upgrade",
-        "attribute": "upgrade",
-        "challenge": "challenge",
+        "spell": "upgrade",
+        "passive": "upgrade",
+        "dungeon": "dungeon",
         "extra": "extra"
     }
     if entry_name not in entry_name_2_back_name_map:
@@ -50,7 +49,7 @@ def entry_name_to_card_back_file_name(entry_name):
 
 def relative_path2github_url(relative_path):
     import time
-    return f"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMaster/main/{relative_path}?dummy={int(time.time())}"
+    return f"https://raw.githubusercontent.com/TinglePan/DungeonCrawlDeckMasterTTS/main/{relative_path}?dummy={int(time.time())}"
 
 
 def process_sheets(sheet_dir_path):

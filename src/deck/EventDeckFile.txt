@@ -6,17 +6,17 @@ PAGE=21,29.7,PORTRAIT
 BORDER=RECTANGLE, #000000, .1
 MARGINS=.5,.5,1,1
 
-VISUAL=G, 10, 10
+VISUAL=GS, 10, 10
 ;NameFont
 HTMLFONT=NameFont,华文宋体,16,,#000000,CENTER
 ;Name
-HTMLTEXT="1-{(cardName)}",[cardName],0%,5%,100%,8%,#FFFFFF,0,,100,NameFont
+HTMLTEXT="1-{(cardName)}",[cardName],0%,10%,100%,8%,#FFFFFF,0,,100,NameFont
 ;EffectFont
 HTMLFONT=EffectFont,华文宋体,8,,#000000
-;MainEffects
-HTMLTEXT="1-{(EFFECT)}",[EFFECT],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
-IMAGE=,"..\..\image\icon\event_inverted.png",2%,4%,10%,8%
+;Effects
+HTMLTEXT="1-{(effect)}",[effect],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
+IMAGE=,"..\..\image\icon\event_inverted.png",44%,2%,12%,8%
 ENDVISUAL
-Display = "..\..\build\image\EventCards.png", 1, 70
+DISPLAY = "..\..\build\image\EventCards.png", 1, 70
 
 Print = 0

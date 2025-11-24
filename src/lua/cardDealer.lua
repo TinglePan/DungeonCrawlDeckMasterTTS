@@ -139,7 +139,7 @@ function layout(whichType)
         local posStarting = findSnapPointPos("RoomZone")
         --Create variables used in placement
         local rowStep, colStep = 0, 0
-        local incidentDeck = Global.getVar("decks").incident
+        local encounterDeck = Global.getVar("decks").encounter
 
         --Placement
         for i=1, layoutData.col*layoutData.row do
@@ -160,13 +160,12 @@ function layout(whichType)
             colStep = colStep + 1
 			heightOffset = heightOffset +0.15
             if colStep > layoutData.col-1 then
-                --Deal incident cards
-                local rowIncidentCardPosition = {
+                local rowEncounterCardPosition = {
                     x = pos.x + 5,
                     y = pos.y,
                     z = pos.z,
                 }
-                incidentDeck.takeObject({position=rowIncidentCardPosition, flip=flip})
+                encounterDeck.takeObject({position=rowEncounterCardPosition, flip=flip})
                 colStep = 0
                 rowStep = rowStep + 1
             end
@@ -208,12 +207,12 @@ function layout(whichType)
             if mainDeck==nil then break end
         end
         for i = 1, layoutData.col do
-            local rowIncidentCardPosition = {
+            local rowEncounterCardPosition = {
                 x = posStarting.x + size.x * (i - 1),
                 y = posStarting.y + heightOffset,
                 z = posStarting.z - size.z * layoutData.row - 2,
             }
-            incidentDeck.takeObject({position=rowIncidentCardPosition, flip=flip})
+            encounterDeck.takeObject({position=rowEncounterCardPosition, flip=flip})
         end
         self.setLock(false)
         createClickButtons()

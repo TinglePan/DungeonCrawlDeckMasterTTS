@@ -10,11 +10,11 @@ VISUAL=GS, 10, 10
 ;NameFont
 HTMLFONT=NameFont,华文宋体,16,,#000000,CENTER
 ;Name
-HTMLTEXT="1-{(cardName)}",[cardName],0%,5%,100%,8%,#FFFFFF,0,,100,NameFont
+HTMLTEXT="1-{(cardName)}",[cardName],0%,10%,100%,8%,#FFFFFF,0,,100,NameFont
 ;TagsFont
 HTMLFONT=TagFont,华文宋体,8,,#000000,CENTER
 ;Tags
-HTMLTEXT="1-{(tags)}",[tags],0%,15%,100%,5%,#FFFFFF,0,,100,TagFont
+HTMLTEXT="1-{(tags)}",[tags],0%,50%,100%,5%,#FFFFFF,0,,100,TagFont
 ;EffectFont
 HTMLFONT=EffectFont,华文宋体,8,,#000000
 ;Effects
@@ -23,7 +23,7 @@ HTMLTEXT="1-{(effect)}",[effect],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
 HTMLFONT=NumberFont,华文宋体,20,,#000000,CENTER
 ;Rank(size)
 HTMLTEXT="1-{(RANK)}",[RANK],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
-IMAGE=,"..\..\image\icon\monster_inverted.png",2%,4%,10%,8%
+IMAGE=,"..\..\image\icon\monster_inverted.png",44%,2%,12%,8%
 ENDVISUAL
 DISPLAY = "..\..\build\image\MonsterCards.png", 1, 70
 DISPLAY = "..\..\build\image\MonsterCards2.png", 71, 140

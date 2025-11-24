@@ -9,18 +9,16 @@ VISUAL=G, 10, 10
 HTMLFONT=FontName,@»ªÎÄËÎÌå,32,,#000000,CENTER
 ;BackMargins
 HTMLMARGINS=FontName,0,0,0,0,CENTER
-IMAGE=1,"..\..\image\cardback\monster_inverted.png",10%,20%,80%,60%
-IMAGE=2,"..\..\image\cardback\trap_inverted.png",10%,20%,80%,60%
-IMAGE=3,"..\..\image\cardback\incident_inverted.png",10%,20%,80%,60%
-IMAGE=4,"..\..\image\cardback\upgrade_inverted.png",10%,20%,80%,60%
-IMAGE=5,"..\..\image\cardback\artifact_inverted.png",10%,20%,80%,60%
-IMAGE=6,"..\..\image\cardback\challenge_inverted.png",10%,20%,80%,60%
+IMAGE=1,"..\..\image\icon\monster_inverted.png",10%,20%,80%,60%
+IMAGE=2,"..\..\image\icon\trap_inverted.png",10%,20%,80%,60%
+IMAGE=3,"..\..\image\icon\encounter_inverted.png",10%,20%,80%,60%
+IMAGE=4,"..\..\image\icon\upgrade_inverted.png",10%,20%,80%,60%
+IMAGE=5,"..\..\image\icon\dungeon_inverted.png",10%,20%,80%,60%
 ENDVISUAL
 Display=..\..\build\image\CardBackMonster.png, 1, 1
 Display=..\..\build\image\CardBackTrap.png, 2, 2
-Display=..\..\build\image\CardBackIncident.png, 3, 3
+Display=..\..\build\image\CardBackEncounter.png, 3, 3
 Display=..\..\build\image\CardBackUpgrade.png, 4, 4
-Display=..\..\build\image\CardBackArtifact.png, 5, 5
-Display=..\..\build\image\CardBackChallenge.png, 6, 6
+Display=..\..\build\image\CardBackDungeon.png, 5, 5
 
 Print = 0
