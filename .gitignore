@@ -6,3 +6,5 @@ actions-runner/
 src/deck/**/*.png
 
 .build_record.json
+
+*.html
