@@ -1,0 +1,16 @@
+{
+  "robot": {
+    "Defect bot": 4,
+    "Miner bot": 4,
+    "Mini factory": 4,
+    "Kamikaze bot": 4,
+    "Sentinel bot": 4
+  },
+  "slime": {
+    "Mob slime": 4,
+    "Slime tower": 4,
+    "Fused slime": 4,
+    "Goo": 4,
+    "Sludge": 4
+  }
+}
