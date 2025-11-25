@@ -70,40 +70,32 @@
   [
     "Monster",
     "怪物",
-    "迷你工厂",
-    "Mini factory",
+    "运输无人机",
+    "Carrier drone",
     "机器人",
     "Robot"
   ],
   [
     "Monster",
     "怪物",
-    "迷你工厂",
-    "Mini factory",
+    "运输无人机",
+    "Carrier drone",
     "机器人",
     "Robot"
   ],
   [
     "Monster",
     "怪物",
-    "迷你工厂",
-    "Mini factory",
+    "运输无人机",
+    "Carrier drone",
     "机器人",
     "Robot"
   ],
   [
     "Monster",
     "怪物",
-    "迷你工厂",
-    "Mini factory",
-    "机器人",
-    "Robot"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "自爆机器人",
-    "Kamikaze bot",
+    "运输无人机",
+    "Carrier drone",
     "机器人",
     "Robot"
   ],
@@ -134,34 +126,70 @@
   [
     "Monster",
     "怪物",
-    "哨戒机器人",
-    "Sentinel bot",
+    "自爆机器人",
+    "Kamikaze bot",
     "机器人",
     "Robot"
   ],
   [
     "Monster",
     "怪物",
-    "哨戒机器人",
-    "Sentinel bot",
+    "哨戒无人机",
+    "Sentinel drone",
     "机器人",
     "Robot"
   ],
   [
     "Monster",
     "怪物",
-    "哨戒机器人",
-    "Sentinel bot",
+    "哨戒无人机",
+    "Sentinel drone",
     "机器人",
     "Robot"
   ],
   [
     "Monster",
     "怪物",
-    "哨戒机器人",
-    "Sentinel bot",
+    "哨戒无人机",
+    "Sentinel drone",
     "机器人",
     "Robot"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "哨戒无人机",
+    "Sentinel drone",
+    "机器人",
+    "Robot"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "炮塔无人机",
+    "Turret",
+    "机器人"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "炮塔无人机",
+    "Turret",
+    "机器人"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "炮塔无人机",
+    "Turret",
+    "机器人"
+  ],
+  [
+    "Monster",
+    "怪物",
+    "炮塔无人机",
+    "Turret",
+    "机器人"
   ],
   [
     "Monster",
@@ -458,7 +486,7 @@
   [
     "Monster",
     "怪物",
-    "金属史莱姆",
+    "黄金史莱姆",
     "Metal slime",
     "史莱姆",
     "Slime"
@@ -466,7 +494,7 @@
   [
     "Monster",
     "怪物",
-    "金属史莱姆",
+    "黄金史莱姆",
     "Metal slime",
     "史莱姆",
     "Slime"
@@ -474,7 +502,7 @@
   [
     "Monster",
     "怪物",
-    "金属史莱姆",
+    "黄金史莱姆",
     "Metal slime",
     "史莱姆",
     "Slime"
@@ -482,7 +510,7 @@
   [
     "Monster",
     "怪物",
-    "金属史莱姆",
+    "黄金史莱姆",
     "Metal slime",
     "史莱姆",
     "Slime"
@@ -532,38 +560,6 @@
     "怪物",
     "游荡者",
     "Rogue",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "游荡者",
-    "Rogue",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "游荡者",
-    "Rogue",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "刺客",
-    "Assassin",
-    "人类",
-    "Human"
-  ],
-  [
-    "Monster",
-    "怪物",
-    "刺客",
-    "Assassin",
     "人类",
     "Human"
   ]
