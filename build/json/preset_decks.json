@@ -2,9 +2,9 @@
   "robot": {
     "Defect bot": 4,
     "Miner bot": 4,
-    "Mini factory": 4,
+    "Carrier drone": 4,
     "Kamikaze bot": 4,
-    "Sentinel bot": 4
+    "Sentinel drone": 4
   },
   "slime": {
     "Mob slime": 4,
