@@ -16,8 +16,8 @@ HTMLFONT=EffectFont,华文宋体,8,,#000000
 HTMLTEXT="1-{(effect)}",[effect],5%,55%,90%,40%,#FFFFFF,0,,100,EffectFont
 ;NumberFont
 HTMLFONT=NumberFont,华文宋体,20,,#000000,CENTER
-;Cost
-HTMLTEXT="1-{(cost)}",[cost],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
+;Rank
+HTMLTEXT="1-{(rank)}",[rank],88%,4%,10%,10%,#FFFFFF,0,,100,NumberFont
 IMAGE=,"..\..\image\icon\skill_inverted.png",44%,2%,12%,8%
 ENDVISUAL
 DISPLAY = "..\..\build\image\SkillCards.png", 1, 70
