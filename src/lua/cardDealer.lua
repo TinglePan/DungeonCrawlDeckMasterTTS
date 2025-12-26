@@ -12,8 +12,9 @@ uiColor = {0,1,0}
 --How many rows or columns are possible
 maxRowCol = 20
 --How much space is put between cards
-hSpacer = 0.8
-vSpacer = 0.3
+hSpacerSide = 0.8
+hSpacerRoom = 1.2
+vSpacer = 0.6
 --If it flips the cards or not
 flip = true
 --Optional height offset so cards are raised off the table more
@@ -123,7 +124,7 @@ function layout(whichType)
         --Get size of cards (need x/z) and add the spacer to it
         local mainDeck = Global.getVar("decks").main
         local size = mainDeck.getBoundsNormalized().size
-        size = {x=size.x+hSpacer, y=size.y, z=size.z+vSpacer}
+        size = {x=2*size.x+hSpacerSide+hSpacerRoom, y=size.y, z=size.z+vSpacer}
         --Rotate the x/z to match the deck+tool's rotation
         local angle = math.rad(mainDeck.getRotation().y - self.getRotation().y)
         local x = math.abs(size.x * math.cos(angle)) + math.abs(size.z * math.sin(angle))

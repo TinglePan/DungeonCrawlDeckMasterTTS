@@ -35,6 +35,8 @@ def entry_name_to_card_back_file_name(entry_name):
         "trap": "trap",
         "event": "encounter",
         "item": "encounter",
+        "territory": "encounter",
+        "ammo": "encounter",
         "skill": "upgrade",
         "spell": "upgrade",
         "passive": "upgrade",

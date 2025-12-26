@@ -143,7 +143,7 @@ function mergeAllDecks()
         decks[name] = mergeDecks(subDecks)
     end
     -- decks.main = mergeDeck({decks.monster, decks.trap})
-    decks.encounter = mergeDecks({decks.event, decks.item})
+    decks.encounter = mergeDecks({decks.event, decks.item, decks.field, decks.ammo})
     decks.encounter.shuffle()
     decks.upgrade = mergeDecks({decks.spell, decks.skill, decks.passive})
     decks.upgrade.shuffle()
@@ -249,25 +249,6 @@ function buildRandMainDeckCoroutine()
     decks.main = targetDeck
     decks.main.shuffle()
     cardDealer.setVar("deck", decks.main)
-end
-
-function refreshBuyUpgradeZone()
-    local objectsInZone = buyUpgradeZone.getObjects()
-    local allCardsInZone = {}
-    for _, obj in ipairs(objectsInZone) do
-        if obj.type == "Card" then
-            table.insert(allCardsInZone, obj)
-        end
-    end
-    for _, card in ipairs(allCardsInZone) do
-        decks.upgrade.putObject(card)
-    end
-    local zonePosition = buyUpgradeZone.getPosition()
-    local zoneScale = buyUpgradeZone.getScale()
-    for i = 1, 5 do
-        local targetPos = {x = zonePosition.x - zoneScale.x / 2 + 2.5 + (i - 1) * hSpacing, y = 1, z = zonePosition.z - zoneScale.z / 2 + 2}
-        decks.upgrade.takeObject({position = targetPos, flip = true})
-    end
 end
 
 function buildPresetDeckCoroutine()

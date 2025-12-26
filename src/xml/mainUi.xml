@@ -29,11 +29,6 @@
         >
     </Button>
     <Button
-        onclick="refreshBuyUpgradeZone"
-        text="Refresh buy upgrade zone"
-        >
-    </Button>
-    <Button
         onclick="buildMainDeck"
         text="Build main deck"
         >
