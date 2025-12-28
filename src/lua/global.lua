@@ -143,7 +143,7 @@ function mergeAllDecks()
         decks[name] = mergeDecks(subDecks)
     end
     -- decks.main = mergeDeck({decks.monster, decks.trap})
-    decks.encounter = mergeDecks({decks.event, decks.item, decks.field, decks.ammo})
+    decks.encounter = mergeDecks({decks.event, decks.item, decks.territory, decks.ammo})
     decks.encounter.shuffle()
     decks.upgrade = mergeDecks({decks.spell, decks.skill, decks.passive})
     decks.upgrade.shuffle()
